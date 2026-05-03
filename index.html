@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"/&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width,initial-scale=1.0"/&gt;</p>
+<p class="p1">&lt;title&gt;Soil as a Living System — ARCH728&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&amp;display=swap');</p>
+<p class="p2"><br></p>
+<p class="p1">*{margin:0;padding:0;box-sizing:border-box;}</p>
+<p class="p1">:root{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--cream:#f4f0e8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--cream2:#ede9e0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--cream3:#e8e3d8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--ink:#1a1814;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--ink2:#3a3630;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--muted:#8a8478;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--rule:#c8c2b4;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--accent:#5c5040;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--red:#9b3a2a;</p>
+<p class="p1">}</p>
+<p class="p1">html{scroll-behavior:smooth;}</p>
+<p class="p1">body{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--cream);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--ink);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Montserrat',sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:300;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow-x:hidden;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">nav{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:fixed;top:0;left:0;right:0;z-index:100;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:20px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(244,240,232,0.94);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>backdrop-filter:blur(6px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom:1px solid var(--rule);</p>
+<p class="p1">}</p>
+<p class="p1">.nav-logo{font-size:10px;letter-spacing:3px;font-weight:500;text-transform:uppercase;color:var(--ink);}</p>
+<p class="p1">.nav-links{display:flex;gap:36px;}</p>
+<p class="p1">.nav-links a{color:var(--muted);text-decoration:none;font-size:9px;letter-spacing:2.5px;font-weight:500;text-transform:uppercase;transition:color .2s;}</p>
+<p class="p1">.nav-links a:hover,.nav-links a.active{color:var(--ink);}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height:100vh;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid-template-rows:1fr auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:140px 48px 60px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom:1px solid var(--rule);</p>
+<p class="p1">}</p>
+<p class="p1">.hero-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}</p>
+<p class="p1">.hero-eyebrow{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:9px;letter-spacing:4px;font-weight:500;text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--muted);margin-bottom:32px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;gap:16px;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--rule);}</p>
+<p class="p1">.hero h1{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(52px,7vw,108px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:.95;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:-3px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--ink);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-transform:uppercase;</p>
+<p class="p1">}</p>
+<p class="p1">.hero h1 .thin{font-weight:100;letter-spacing:-2px;}</p>
+<p class="p1">.hero-right{padding-bottom:12px;}</p>
+<p class="p1">.hero-desc{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:13px;line-height:1.85;color:var(--ink2);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:380px;margin-bottom:40px;font-weight:300;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-meta-row{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule);}</p>
+<p class="p1">.hm{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--rule);}</p>
+<p class="p1">.hm .k{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}</p>
+<p class="p1">.hm .v{font-size:11px;font-weight:400;color:var(--ink);}</p>
+<p class="p1">.hero-bottom{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;justify-content:space-between;align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding-top:40px;border-top:1px solid var(--rule);margin-top:40px;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-bottom-left{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}</p>
+<p class="p1">.scroll-cue{display:flex;align-items:center;gap:12px;font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}</p>
+<p class="p1">.scroll-cue::after{content:'↓';font-size:14px;font-weight:300;}</p>
+<p class="p2"><br></p>
+<p class="p1">.s{padding:120px 48px;border-bottom:1px solid var(--rule);}</p>
+<p class="p1">.s-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:80px;border-bottom:1px solid var(--rule);padding-bottom:20px;}</p>
+<p class="p1">.s-num{font-size:9px;letter-spacing:3px;font-weight:500;text-transform:uppercase;color:var(--muted);}</p>
+<p class="p1">.s-title{font-size:clamp(28px,4vw,56px);font-weight:800;letter-spacing:-2px;text-transform:uppercase;color:var(--ink);}</p>
+<p class="p1">.s-label{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}</p>
+<p class="p2"><br></p>
+<p class="p1">#drawing{background:var(--cream2);}</p>
+<p class="p1">.drawing-meta{font-size:10px;letter-spacing:1px;color:var(--muted);margin-bottom:32px;font-weight:400;}</p>
+<p class="p1">.drawing-wrap{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#faf8f4;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--rule);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:40px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:48px;</p>
+<p class="p1">}</p>
+<p class="p1">.drawing-svg-container{width:100%;overflow-x:auto;}</p>
+<p class="p1">.section-svg{width:100%;max-width:1200px;display:block;margin:0 auto;}</p>
+<p class="p1">.drawing-legend{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;padding-top:32px;border-top:1px solid var(--rule);}</p>
+<p class="p1">.legend-block h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}</p>
+<p class="p1">.legend-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:12px;}</p>
+<p class="p1">.legend-swatch{width:20px;height:10px;margin-top:3px;flex-shrink:0;}</p>
+<p class="p1">.legend-text{font-size:11px;color:var(--ink2);line-height:1.6;font-weight:300;}</p>
+<p class="p1">.legend-text strong{font-weight:500;color:var(--ink);}</p>
+<p class="p1">.flow-item{font-size:11px;color:var(--ink2);line-height:1.7;padding-left:16px;position:relative;margin-bottom:8px;}</p>
+<p class="p1">.flow-item::before{content:'›';position:absolute;left:0;color:var(--muted);}</p>
+<p class="p2"><br></p>
+<p class="p1">.inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}</p>
+<p class="p1">.inv-card{background:var(--cream);padding:40px 32px;display:flex;flex-direction:column;gap:16px;}</p>
+<p class="p1">.inv-card-num{font-size:9px;letter-spacing:3px;font-weight:700;color:var(--muted);text-transform:uppercase;}</p>
+<p class="p1">.inv-card h3{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);}</p>
+<p class="p1">.inv-card p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;}</p>
+<p class="p2"><br></p>
+<p class="p1">#question{background:var(--cream2);}</p>
+<p class="p1">.q-layout{display:grid;grid-template-columns:5fr 4fr;gap:80px;}</p>
+<p class="p1">.q-big{font-size:clamp(24px,3.5vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;text-transform:uppercase;color:var(--ink);margin-bottom:40px;}</p>
+<p class="p1">.q-body p{font-size:12px;color:var(--ink2);line-height:1.85;margin-bottom:16px;font-weight:300;}</p>
+<p class="p1">.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}</p>
+<p class="p1">.tag{padding:6px 14px;border:1px solid var(--rule);font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--ink2);}</p>
+<p class="p1">.q-right{border-left:1px solid var(--rule);padding-left:48px;}</p>
+<p class="p1">.q-pull{font-size:clamp(18px,2.5vw,28px);font-weight:300;line-height:1.45;color:var(--ink2);font-style:italic;margin-bottom:40px;}</p>
+<p class="p1">.q-pull strong{font-weight:700;font-style:normal;color:var(--ink);}</p>
+<p class="p2"><br></p>
+<p class="p1">.tl-row{display:grid;grid-template-columns:80px 1fr 300px;gap:32px;align-items:start;padding:28px 0;border-bottom:1px solid var(--rule);}</p>
+<p class="p1">.tl-year{font-size:24px;font-weight:800;letter-spacing:-1px;color:var(--ink);}</p>
+<p class="p1">.tl-bar{height:1px;background:var(--rule);position:relative;margin-top:14px;}</p>
+<p class="p1">.tl-fill{height:1px;background:var(--ink);position:absolute;top:0;left:0;}</p>
+<p class="p1">.tl-event{font-size:11px;color:var(--ink2);line-height:1.6;font-weight:300;}</p>
+<p class="p2"><br></p>
+<p class="p1">#frame{background:var(--cream2);}</p>
+<p class="p1">.frame-3col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);}</p>
+<p class="p1">.frame-col{background:var(--cream2);padding:48px 32px;}</p>
+<p class="p1">.frame-col-num{font-size:9px;letter-spacing:3px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:24px;}</p>
+<p class="p1">.frame-col h3{font-size:18px;font-weight:800;letter-spacing:-0.5px;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}</p>
+<p class="p1">.frame-col p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;margin-bottom:24px;}</p>
+<p class="p1">.flow{display:flex;flex-direction:column;gap:4px;}</p>
+<p class="p1">.flow-node{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}</p>
+<p class="p1">.fn{padding:6px 12px;background:var(--cream3);font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--ink);}</p>
+<p class="p1">.fa{font-size:10px;color:var(--muted);}</p>
+<p class="p2"><br></p>
+<p class="p1">.sp-table{width:100%;border-collapse:collapse;margin-bottom:80px;}</p>
+<p class="p1">.sp-table th{text-align:left;padding:12px 16px;font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);}</p>
+<p class="p1">.sp-table td{padding:20px 16px;font-size:11px;color:var(--ink2);border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.65;font-weight:300;}</p>
+<p class="p1">.sp-table tr:hover td{background:var(--cream2);}</p>
+<p class="p1">.sp-name{color:var(--ink);font-style:italic;font-weight:500;display:block;margin-bottom:2px;}</p>
+<p class="p2"><br></p>
+<p class="p1">.layers-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);}</p>
+<p class="p1">.layer-btn{background:var(--cream);padding:24px 28px;cursor:pointer;border:none;text-align:left;width:100%;transition:background .15s;}</p>
+<p class="p1">.layer-btn:hover,.layer-btn.active{background:var(--ink);color:#fff !important;}</p>
+<p class="p1">.layer-btn .ln{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);}</p>
+<p class="p1">.layer-btn .ld{font-size:10px;color:var(--muted);margin-top:4px;font-weight:300;}</p>
+<p class="p1">.layer-btn.active .ln,.layer-btn.active .ld{color:#fff;}</p>
+<p class="p1">.layer-detail{background:var(--cream2);padding:48px;border-top:1px solid var(--rule);grid-column:1/-1;}</p>
+<p class="p1">.layer-detail h4{font-size:11px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}</p>
+<p class="p1">.layer-detail p{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:700px;}</p>
+<p class="p2"><br></p>
+<p class="p1">#timelapse{background:var(--cream2);}</p>
+<p class="p1">.tl-intro-text{font-size:13px;color:var(--ink2);line-height:1.85;max-width:600px;margin-bottom:64px;font-weight:300;}</p>
+<p class="p1">.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}</p>
+<p class="p1">.phase{background:var(--cream2);padding:40px 32px;}</p>
+<p class="p1">.phase-tag{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}</p>
+<p class="p1">.phase-years{font-size:40px;font-weight:800;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:16px;}</p>
+<p class="p1">.phase-title{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}</p>
+<p class="p1">.phase p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;}</p>
+<p class="p1">.phase-dots{display:flex;gap:4px;margin-top:20px;}</p>
+<p class="p1">.dot{width:6px;height:6px;background:var(--rule);}</p>
+<p class="p1">.dot.on{background:var(--ink);}</p>
+<p class="p2"><br></p>
+<p class="p1">.out-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);margin-bottom:80px;}</p>
+<p class="p1">.out-cell{background:var(--cream);padding:48px 32px;}</p>
+<p class="p1">.out-num{font-size:72px;font-weight:800;letter-spacing:-4px;color:var(--cream3);line-height:1;margin-bottom:16px;}</p>
+<p class="p1">.out-cell h3{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}</p>
+<p class="p1">.out-cell p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;}</p>
+<p class="p1">.concept-box{background:var(--cream2);border:1px solid var(--rule);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;}</p>
+<p class="p1">.concept-box-text h3{font-size:16px;font-weight:800;letter-spacing:-0.5px;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}</p>
+<p class="p1">.concept-box-text p{font-size:12px;color:var(--ink2);line-height:1.85;font-weight:300;}</p>
+<p class="p1">.concept-diagram{display:flex;flex-direction:column;gap:1px;}</p>
+<p class="p1">.cd-row{display:flex;align-items:stretch;gap:1px;}</p>
+<p class="p1">.cd-cell{flex:1;background:var(--cream);padding:16px 20px;}</p>
+<p class="p1">.cd-cell .ct{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}</p>
+<p class="p1">.cd-cell .cv{font-size:10px;color:var(--ink2);line-height:1.5;font-weight:300;}</p>
+<p class="p2"><br></p>
+<p class="p1">footer{padding:80px 48px 48px;background:var(--ink);color:var(--cream);}</p>
+<p class="p1">.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px;padding-bottom:48px;border-bottom:1px solid #3a3630;}</p>
+<p class="p1">.ft-title{font-size:clamp(24px,3vw,40px);font-weight:800;letter-spacing:-1.5px;text-transform:uppercase;color:var(--cream);margin-bottom:8px;}</p>
+<p class="p1">.ft-sub{font-size:10px;letter-spacing:3px;font-weight:500;text-transform:uppercase;color:#8a8478;}</p>
+<p class="p1">.fc h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:#8a8478;margin-bottom:16px;}</p>
+<p class="p1">.fc a,.fc p{font-size:11px;color:#c8c2b4;line-height:2;display:block;text-decoration:none;font-weight:300;}</p>
+<p class="p1">.fc a:hover{color:var(--cream);}</p>
+<p class="p1">.footer-bottom{display:flex;justify-content:space-between;padding-top:32px;font-size:10px;letter-spacing:1px;color:#5a5448;font-weight:300;}</p>
+<p class="p2"><br></p>
+<p class="p1">@media(max-width:900px){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>nav{padding:16px 24px;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-links{display:none;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s,.hero{padding:80px 24px;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero h1{letter-spacing:-2px;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-top,.q-layout,.frame-3col,.out-grid,.phases,.inv-grid,.drawing-legend,.layers-wrap,.concept-box,.footer-top{grid-template-columns:1fr;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tl-row{grid-template-columns:60px 1fr;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tl-event{display:none;}</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-logo"&gt;ARCH728 — Reflections on Landscape&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#drawing"&gt;Section&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#inventory"&gt;Inventory&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#question"&gt;Question&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#site"&gt;Site&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#frame"&gt;Frame&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#species"&gt;Species&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#timelapse"&gt;Timelapse&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#output"&gt;Output&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-eyebrow"&gt;ARCH728 — Reflections on Landscape&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;&lt;span class="thin"&gt;Soil&lt;/span&gt;&lt;br&gt;as a&lt;br&gt;Living&lt;br&gt;System&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-desc"&gt;A landscape research investigation into the 6002. Cadde corridor, Ankara — tracing soil metabolism, species habitat, and twenty-one years of urban transformation through satellite imagery, field surveys, and section analysis.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-meta-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hm"&gt;&lt;span class="k"&gt;Site&lt;/span&gt;&lt;span class="v"&gt;6002. Cadde, Ankara&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hm"&gt;&lt;span class="k"&gt;Period&lt;/span&gt;&lt;span class="v"&gt;2004 — 2025&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hm"&gt;&lt;span class="k"&gt;Focus&lt;/span&gt;&lt;span class="v"&gt;Soil Metabolism / Habitat / Species&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hm"&gt;&lt;span class="k"&gt;Section&lt;/span&gt;&lt;span class="v"&gt;Beytepe Pond — Bilkent, 1.42 km&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hm"&gt;&lt;span class="k"&gt;Elevation range&lt;/span&gt;&lt;span class="v"&gt;854 m — 891 m / avg. slope 2.9%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-bottom"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-bottom-left"&gt;Beytepe — Bilkent — 6002. Cadde&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="scroll-cue"&gt;Scroll to explore&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="drawing"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;00&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;Beytepe Pond — Bilkent Section&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Soil Movement &amp;amp; Habitat&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="drawing-meta"&gt;Bilkent KMZ Section 4 (2024) · min. 854 m — max. 891 m · 1.42 km · avg. slope 2.9%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="drawing-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="drawing-svg-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg class="section-svg" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat,sans-serif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect width="1200" height="420" fill="#faf8f4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="18" y="98" font-size="9" fill="#8a8478" font-weight="400"&gt;891 m&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="18" y="178" font-size="9" fill="#8a8478" font-weight="400"&gt;875 m&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="18" y="258" font-size="9" fill="#8a8478" font-weight="400"&gt;864 m&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="18" y="318" font-size="9" fill="#8a8478" font-weight="400"&gt;854 m&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="48" y1="96" x2="1180" y2="96" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="48" y1="176" x2="1180" y2="176" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="48" y1="256" x2="1180" y2="256" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="48" y1="316" x2="1180" y2="316" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;pattern id="dots" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;circle cx="1.5" cy="1.5" r=".9" fill="#b0a898"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/pattern&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;pattern id="crosshatch" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;line x1="0" y1="0" x2="5" y2="5" stroke="#b0a898" stroke-width=".6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;line x1="5" y1="0" x2="0" y2="5" stroke="#b0a898" stroke-width=".6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/pattern&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;pattern id="hlines" x="0" y="0" width="5" height="4" patternUnits="userSpaceOnUse"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;line x1="0" y1="2" x2="5" y2="2" stroke="#b0a898" stroke-width=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/pattern&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;polygon points="48,316 48,340 1160,340 1160,96 980,96 900,130 750,200 600,240 450,270 300,290 160,308 100,314 48,316" fill="url(#dots)" opacity=".55"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="48" y="330" width="1112" height="16" fill="#3a3630" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="48" y="318" width="1112" height="12" fill="url(#hlines)" opacity=".6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;polygon points="48,316 100,314 160,308 300,290 450,270 600,240 750,200 900,130 980,96 1000,96 980,106 900,140 750,210 600,250 450,282 300,302 160,320 100,326 48,328" fill="url(#crosshatch)" opacity=".35"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;polyline points="48,316 100,314 160,308 300,290 450,270 600,240 750,200 900,130 980,96 1160,96" fill="none" stroke="#1a1814" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="48" y="300" width="80" height="16" fill="#8ab0c0" opacity=".5" rx="2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;polygon points="480,270 520,240 560,270" fill="url(#dots)" stroke="#1a1814" stroke-width="1" opacity=".8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="490" y="230" font-size="8" fill="#5c5040" font-weight="500"&gt;excavated fill&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;polygon points="760,200 810,170 860,200" fill="url(#crosshatch)" stroke="#1a1814" stroke-width=".8" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;polygon points="820,170 850,148 880,170" fill="url(#crosshatch)" stroke="#1a1814" stroke-width=".8" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="790" y="160" font-size="8" fill="#5c5040" font-weight="500"&gt;imported fill&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;rect x="680" y="208" width="180" height="52" fill="none" stroke="#1a1814" stroke-width="1"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="693" y="226" font-size="9" fill="#1a1814" font-weight="700"&gt;Bilkent Hospital&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="693" y="240" font-size="7.5" fill="#8a8478" font-weight="300"&gt;surface water flow — diffuse&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="693" y="252" font-size="7.5" fill="#8a8478" font-weight="300"&gt;through clayey strata&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;g transform="translate(50,285)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="0" y1="24" x2="0" y2="0" stroke="#5c5040" stroke-width="1.2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ellipse cx="0" cy="-2" rx="2" ry="6" fill="#5c5040" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="8" y1="24" x2="8" y2="2" stroke="#5c5040" stroke-width="1.2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ellipse cx="8" cy="0" rx="2" ry="6" fill="#5c5040" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="16" y1="24" x2="16" y2="1" stroke="#5c5040" stroke-width="1.2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ellipse cx="16" cy="-1" rx="2" ry="6" fill="#5c5040" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="24" y1="24" x2="24" y2="3" stroke="#5c5040" stroke-width="1.2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ellipse cx="24" cy="1" rx="2" ry="6" fill="#5c5040" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;line x1="32" y1="24" x2="32" y2="0" stroke="#5c5040" stroke-width="1.2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ellipse cx="32" cy="-2" rx="2" ry="6" fill="#5c5040" opacity=".7"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="48" y="278" font-size="8.5" fill="#1a1814" font-weight="700"&gt;Phragmites australis&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="48" y="289" font-size="7.5" fill="#8a8478" font-weight="300"&gt;reed — clayey, waterlogged soil indicator&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="290" cy="290" r="5" fill="none" stroke="#5c5040" stroke-width="1"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="245" y="275" font-size="8.5" fill="#1a1814" font-weight="700"&gt;Lamium purpureum&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="245" y="286" font-size="7.5" fill="#8a8478"&gt;moist, disturbed clayey soil&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;circle cx="960" cy="106" r="14" fill="none" stroke="#1a1814" stroke-width="1"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="960" y1="120" x2="960" y2="130" stroke="#1a1814" stroke-width="1.2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="930" y="97" font-size="7.5" fill="#8a8478"&gt;polliniferous tree sp. — Apis mellifera&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="110" y="308" font-size="7.5" fill="#8a8478"&gt;Botanic Garden&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="110" y="316" font-size="7.5" fill="#8a8478"&gt;6002. Cadde&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="48" y="358" font-size="9" fill="#1a1814" font-weight="700"&gt;Beytepe Pond&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="48" y="370" font-size="7.5" fill="#8a8478"&gt;clayeyish · lakeside&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="48" y1="390" x2="1160" y2="390" stroke="#1a1814" stroke-width=".8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="48" y1="386" x2="48" y2="394" stroke="#1a1814" stroke-width=".8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="330" y1="386" x2="330" y2="394" stroke="#1a1814" stroke-width=".8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="612" y1="386" x2="612" y2="394" stroke="#1a1814" stroke-width=".8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="894" y1="386" x2="894" y2="394" stroke="#1a1814" stroke-width=".8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;line x1="1160" y1="386" x2="1160" y2="394" stroke="#1a1814" stroke-width=".8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="44" y="404" font-size="8.5" fill="#1a1814" font-weight="300"&gt;0 km&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="318" y="404" font-size="8.5" fill="#8a8478" font-weight="300"&gt;0.30&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="600" y="404" font-size="8.5" fill="#8a8478" font-weight="300"&gt;0.60&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="882" y="404" font-size="8.5" fill="#8a8478" font-weight="300"&gt;0.90&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="1130" y="404" font-size="8.5" fill="#1a1814" font-weight="300"&gt;1.42 km&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="1175" y="200" font-size="8" fill="#8a8478" font-weight="300"&gt;· Soil metabolism&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="1175" y="214" font-size="8" fill="#8a8478" font-weight="300"&gt;· Material flows&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="1175" y="228" font-size="8" fill="#8a8478" font-weight="300"&gt;· Imported &amp;amp; alluvial soils&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="1175" y="242" font-size="8" fill="#8a8478" font-weight="300"&gt;· Boundary dynamics&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;text x="1175" y="256" font-size="8" fill="#8a8478" font-weight="300"&gt;· Landscape transformation&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="drawing-legend"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="legend-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h4&gt;Soil Strata&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-swatch" style="background:repeating-linear-gradient(45deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 4px);border:1px solid #c8c2b4;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-text"&gt;&lt;strong&gt;Surface soil&lt;/strong&gt; — heterogeneous anthropogenic fill, disturbed by construction and road works&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-swatch" style="background:radial-gradient(circle,#b0a898 30%,transparent 30%) 0 0 / 5px 5px;border:1px solid #c8c2b4;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-text"&gt;&lt;strong&gt;Clayey layer&lt;/strong&gt; — Ankara clays, water-retaining, carrier of reed habitat&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-swatch" style="background:repeating-linear-gradient(0deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 3px);border:1px solid #c8c2b4;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-text"&gt;&lt;strong&gt;Bedrock / basalt&lt;/strong&gt; — impermeable base, traps water within the clay matrix&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-swatch" style="background:repeating-linear-gradient(-45deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 4px);border:1px solid #c8c2b4;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="legend-text"&gt;&lt;strong&gt;Excavated fill mound&lt;/strong&gt; — construction spoil, triggers redistribution of subsurface water&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="legend-block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h4&gt;Flow &amp;amp; Movement&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flow-item"&gt;Subsurface water flow — lateral, following slope gradient&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flow-item"&gt;Upward capillary rise — water diffuses from clay matrix to surface through road incision&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="inventory"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;01&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;The Inventory&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Site Documentation&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="inv-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inv-card"&gt;&lt;div class="inv-card-num"&gt;01 — A&lt;/div&gt;&lt;h3&gt;Site Context&lt;/h3&gt;&lt;p&gt;The 6002. Cadde corridor in Ankara — a transitional landscape between urban infrastructure and remnant natural systems, shaped by decades of road development and continuous soil displacement.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inv-card"&gt;&lt;div class="inv-card-num"&gt;01 — B&lt;/div&gt;&lt;h3&gt;Soil Type Info-base&lt;/h3&gt;&lt;p&gt;Systematic documentation of soil conditions: alluvial deposits, engineered fill zones, imported soils, and excavated strata — each carrying distinct ecological memory and metabolic capacity.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inv-card"&gt;&lt;div class="inv-card-num"&gt;01 — C&lt;/div&gt;&lt;h3&gt;Aerial Documentation&lt;/h3&gt;&lt;p&gt;Satellite imagery series from 2004 to 2025. Transformation every 5 years between 2005 and 2025 — and monthly from 2014 through 2019 for the construction period.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inv-card"&gt;&lt;div class="inv-card-num"&gt;01 — D&lt;/div&gt;&lt;h3&gt;Key Words&lt;/h3&gt;&lt;p&gt;Soil metabolism · water-soil flow · clay mineral activity · species indicators · landscape transformation · habitat strata · ecological succession · boundary dynamics&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inv-card"&gt;&lt;div class="inv-card-num"&gt;01 — E&lt;/div&gt;&lt;h3&gt;Psychological Aspects of Soil&lt;/h3&gt;&lt;p&gt;Beyond technical analysis: how soil conditions shape sensory and emotional experience of landscape — the materiality of earth as a medium of perception and collective memory.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="inv-card"&gt;&lt;div class="inv-card-num"&gt;01 — F&lt;/div&gt;&lt;h3&gt;Water-Soil Flow Mapping&lt;/h3&gt;&lt;p&gt;Hydrological dynamics at the Beytepe Pond–Bilkent section — tracing how lateral and capillary water movement governs soil stratification and habitat formation along the slope.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;02&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;The Question&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Research Framework&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="q-layout"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="q-big"&gt;How does soil&lt;br&gt;metabolize urban&lt;br&gt;transformation?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="q-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The site around 6002. Cadde is not merely a backdrop to urban development — it is an active participant. Soils accumulate, shift, and respond; they carry the trace of every disturbance while sustaining the conditions for ecological recovery.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;This research asks: what can the soil tell us about the history and future of a landscape? How do species act as indicators of soil health? And how might design work with — rather than against — the metabolic processes already underway?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The investigation moves between scales: from the molecular chemistry of clay particles to the territorial pattern of road infrastructure; from monthly satellite readings to the lifespan of a reed colony along the Beytepe shoreline.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tag-cloud"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="tag"&gt;Soil Metabolism&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="tag"&gt;Landscape Ecology&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="tag"&gt;Clayey Soil&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="tag"&gt;Water-Soil Flow&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="tag"&gt;Species Indicators&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="tag"&gt;Urban Transformation&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="q-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="q-pull"&gt;"Soil is not &lt;strong&gt;ground&lt;/strong&gt; — it is a system, an archive, and a &lt;strong&gt;living infrastructure&lt;/strong&gt; in continuous negotiation with everything built upon it."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="border-top:1px solid var(--rule);padding-top:24px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:16px;"&gt;Methodology Search&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;"&gt;Field surveys at Beytepe Pond and 6002. Cadde · Satellite image analysis (Google Earth, 2004–2025) · Bilkent KMZ Section documentation · Species inventory with soil correlation · Conceptual framework: Soil Movement → Soil Metabolism → Habitat&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="site"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;03&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;The Site&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Transformation 2004 — 2025&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p style="font-size:12px;color:var(--muted);max-width:600px;line-height:1.85;margin-bottom:64px;font-weight:300;"&gt;6002. Cadde, Ankara — a corridor undergoing continuous transformation driven by infrastructure expansion, soil movement, and the persistence of ecological systems.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="tl-row"&gt;&lt;span class="tl-year"&gt;2004&lt;/span&gt;&lt;div&gt;&lt;div class="tl-bar"&gt;&lt;div class="tl-fill" style="width:10%"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="tl-event"&gt;Pre-development — agricultural and semi-natural condition intact&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="tl-row"&gt;&lt;span class="tl-year"&gt;2008&lt;/span&gt;&lt;div&gt;&lt;div class="tl-bar"&gt;&lt;div class="tl-fill" style="width:25%"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="tl-event"&gt;Initial road alignment visible — early soil displacement begins&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="tl-row"&gt;&lt;span class="tl-year"&gt;2012&lt;/span&gt;&lt;div&gt;&lt;div class="tl-bar"&gt;&lt;div class="tl-fill" style="width:45%"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="tl-event"&gt;Significant road expansion — land fragmentation visible from satellite&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="tl-row"&gt;&lt;span class="tl-year"&gt;2014–2015&lt;/span&gt;&lt;div&gt;&lt;div class="tl-bar"&gt;&lt;div class="tl-fill" style="width:62%"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="tl-event"&gt;Construction intensifies — imported fill soils, monthly imagery available&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="tl-row"&gt;&lt;span class="tl-year"&gt;2017–2019&lt;/span&gt;&lt;div&gt;&lt;div class="tl-bar"&gt;&lt;div class="tl-fill" style="width:82%"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="tl-event"&gt;Road fully developed — movement of surrounding environment tracked monthly&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="tl-row"&gt;&lt;span class="tl-year"&gt;2025&lt;/span&gt;&lt;div&gt;&lt;div class="tl-bar"&gt;&lt;div class="tl-fill" style="width:100%"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class="tl-event"&gt;Current state — layered landscape of infrastructure, disturbed and recovering soil&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="frame"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;04&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;The Frame&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Conceptual Structure&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="frame-3col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="frame-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="frame-col-num"&gt;Frame — I&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;Soil Movement&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;The physical displacement of earth — excavated, transported, deposited — as the primary driver of landscape change. Infrastructure as terrain-maker: alluvial, fill, imported, and excavated soils mapped across the 6002. Cadde section.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flow"&gt;&lt;div class="flow-node"&gt;&lt;span class="fn"&gt;Excavated&lt;/span&gt;&lt;span class="fa"&gt;→&lt;/span&gt;&lt;span class="fn"&gt;Transported&lt;/span&gt;&lt;span class="fa"&gt;→&lt;/span&gt;&lt;span class="fn"&gt;Deposited&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="frame-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="frame-col-num"&gt;Frame — II&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;Soil Metabolism&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Biological and chemical processes within soil layers — microbial activity, nutrient cycling, clay mineral swelling, water retention — understood as metabolic functions of a living system continuously responding to disturbance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flow"&gt;&lt;div class="flow-node"&gt;&lt;span class="fn"&gt;Clay Minerals&lt;/span&gt;&lt;span class="fa"&gt;↔&lt;/span&gt;&lt;span class="fn"&gt;Microbes&lt;/span&gt;&lt;span class="fa"&gt;↔&lt;/span&gt;&lt;span class="fn"&gt;Water&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="frame-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="frame-col-num"&gt;Frame — III&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;Habitat&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Species colonisation as indicator of soil health and metabolic capacity. The presence of clay-tolerant species — reeds, dead-nettle, daisy — marks zones of ecological recovery within the transformed corridor.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flow"&gt;&lt;div class="flow-node"&gt;&lt;span class="fn"&gt;Species&lt;/span&gt;&lt;span class="fa"&gt;→&lt;/span&gt;&lt;span class="fn"&gt;Soil Signal&lt;/span&gt;&lt;span class="fa"&gt;→&lt;/span&gt;&lt;span class="fn"&gt;Design&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="species"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;05&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;Species &amp;amp; Clayey Soil&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Species Inventory / Indicators of Clay Soil Metabolism&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.85;margin-bottom:40px;font-weight:300;"&gt;Each species acts as a living indicator of soil conditions. The inventory below — drawn from field surveys at Beytepe Pond, 6002. Cadde, and Botanic Garden reference sites — correlates five key species with soil metabolism and design potential.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;table class="sp-table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Species&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Soil Relation&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Condition / Presence&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Design Potential&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;&lt;span class="sp-name"&gt;Phragmites australis&lt;/span&gt;Common Reed&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Thrives in waterlogged, clay-heavy soils. Filters and stabilises disturbed ground. Promotes organic matter accumulation along the Beytepe shoreline.&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Stable — colonises ponds and drainage channels; present at Beytepe Pond edge and 6002. Cadde roadside&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Anchor planting for water-soil transition zones; ecological indicator of subsurface moisture&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;&lt;span class="sp-name"&gt;Lamium purpureum&lt;/span&gt;Dead-nettle / Purple Archangel&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Indicates moderately disturbed clay soils rich in nitrogen. Presence marks areas of recent soil movement and early successional recovery.&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Widespread along road margins and disturbed fill zones&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Indicator of soil recovery phase I — nitrogen enrichment from organic matter breakdown&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;&lt;span class="sp-name"&gt;Bellis sp.&lt;/span&gt;Daisy&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;High moisture tolerance; adapted to compacted clay. Signals early successional stages immediately post-disturbance.&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Present in fill soil zones where surface compaction prevents deeper root penetration&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Pioneer species in restoration sequences — low maintenance ground cover in clay zones&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;&lt;span class="sp-name"&gt;Fallopia / Bilderdykia sp.&lt;/span&gt;Black Bindweed&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Opportunistic coloniser of bare disturbed soils. Covers exposed fill and excavated ground rapidly; tolerant of disturbed clay strata.&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Locally present near active construction margins — monitor for spread&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Erosion control in short term; manage to prevent shading of pioneer species&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;&lt;span class="sp-name"&gt;Beytepe Botanic Garden spp.&lt;/span&gt;Cultivated Reference&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Adjacent semi-managed landscape provides a reference baseline for potential ecological trajectories in the absence of construction disturbance.&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Reference site — managed conditions, high species diversity&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;Long-term habitat design target; species palette for native planting strategies&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="margin-top:16px;border-top:1px solid var(--rule);padding-top:48px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:24px;"&gt;Habitat Strata / Soil as a Living System&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="layers-wrap" id="layerWrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="layer-btn active" onclick="setL(0)"&gt;&lt;div class="ln"&gt;Aerial / Canopy Layer&lt;/div&gt;&lt;div class="ld"&gt;Above ground&lt;/div&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="layer-btn" onclick="setL(1)"&gt;&lt;div class="ln"&gt;Surface Vegetation Layer&lt;/div&gt;&lt;div class="ld"&gt;0 – 50 cm&lt;/div&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="layer-btn" onclick="setL(2)"&gt;&lt;div class="ln"&gt;Root / Microbial Layer&lt;/div&gt;&lt;div class="ld"&gt;50 cm – 1.5 m&lt;/div&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="layer-btn" onclick="setL(3)"&gt;&lt;div class="ln"&gt;Clayey Soil / Aquifer Layer&lt;/div&gt;&lt;div class="ld"&gt;1.5 m – 3 m&lt;/div&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="layer-btn" onclick="setL(4)"&gt;&lt;div class="ln"&gt;Bedrock / Basalt&lt;/div&gt;&lt;div class="ld"&gt;Below 3 m&lt;/div&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="layer-detail" id="layerDetail"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Aerial / Canopy Layer&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The aerial layer comprises the above-ground biomass — primarily reed stands along water channels and shrub canopy at habitat margins. This layer moderates microclimate, captures airborne particles, and provides nesting structures for fauna. On disturbed sites, its absence marks zones of maximum ecological stress.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="timelapse"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;06&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;Timelapse&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Transformation 2004 — 2025&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="tl-intro-text"&gt;Twenty-one years of satellite imagery — from pre-development greenfield (2004) to the layered infrastructure landscape of today (2025). Three scales of reading: every five years for the long arc; monthly from 2014–2015 and 2017–2019 for the construction period; and four key comparison frames across the site.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="phases"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="phase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-tag"&gt;Phase I&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-years"&gt;2004–10&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-title"&gt;Ground Zero&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Predominantly agricultural and semi-natural landscape. Early traces of road alignment visible. Alluvial and native soil systems largely intact. Beytepe Pond shoreline colonised by reed stands.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-dots"&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="phase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-tag"&gt;Phase II&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-years"&gt;2012–19&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-title"&gt;Development of the Road&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Intensive construction period. Monthly imagery from 2017–2019 shows the simultaneous development of road infrastructure and the movement of the surrounding environment. Imported fill soils introduced.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-dots"&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="phase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-tag"&gt;Phase III&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-years"&gt;2020–25&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-title"&gt;Aftermath&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Post-construction ecological succession. Disturbed soils begin to be colonised. Drainage and water-soil dynamics reorganise around new topography. Species return to margins of the corridor.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="phase-dots"&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;div class="dot on"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;section class="s" id="output"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="s-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-num"&gt;07&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="s-title"&gt;The Output&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="s-label"&gt;Conceptual Framework&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="out-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="out-cell"&gt;&lt;div class="out-num"&gt;01&lt;/div&gt;&lt;h3&gt;Soil Movement&lt;/h3&gt;&lt;p&gt;Mapping the physical displacement of earth — alluvial, fill, imported, excavated — as the primary design medium. Infrastructure as terrain-maker: every cut and fill leaves a metabolic trace in the landscape.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="out-cell"&gt;&lt;div class="out-num"&gt;02&lt;/div&gt;&lt;h3&gt;Soil Metabolism&lt;/h3&gt;&lt;p&gt;Designing with biological and chemical processes: microbial cycles, clay mineral activity, capillary water dynamics. Soil as living infrastructure — responsive, layered, and continuous.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="out-cell"&gt;&lt;div class="out-num"&gt;03&lt;/div&gt;&lt;h3&gt;Habitat&lt;/h3&gt;&lt;p&gt;Species-led design strategies — using indicator plants to identify zones of ecological potential and structure a phased recovery landscape along the 6002. Cadde corridor and Beytepe Pond margins.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="concept-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="concept-box-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;Soil as Process — Design as Response&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;The project proposes reading the site not as a problem to be solved but as a metabolic process to be understood and extended. Soil is the archive of past disturbance and the medium of future habitat. Design operates at the intersection of infrastructure, ecology, and time — working with what the land already knows how to do.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="concept-diagram"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cd-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cd-cell"&gt;&lt;div class="ct"&gt;Soil Movement&lt;/div&gt;&lt;div class="cv"&gt;Excavation, transport, deposition — displacement as design medium&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cd-cell"&gt;&lt;div class="ct"&gt;↓&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cd-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cd-cell"&gt;&lt;div class="ct"&gt;Soil Metabolism&lt;/div&gt;&lt;div class="cv"&gt;Microbial cycles, clay activity, water retention — biology as infrastructure&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cd-cell"&gt;&lt;div class="ct"&gt;↓&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cd-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cd-cell"&gt;&lt;div class="ct"&gt;Habitat&lt;/div&gt;&lt;div class="cv"&gt;Living systems, species indicators, long-term landscape recovery&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cd-cell"&gt;&lt;div class="ct"&gt;↑&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="footer-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ft-title"&gt;Reflections on&lt;br&gt;Landscape&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ft-sub" style="margin-top:12px;"&gt;ARCH728 — Graduate Studio&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="fc"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h4&gt;Sections&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#drawing"&gt;Section Drawing&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#inventory"&gt;The Inventory&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#question"&gt;The Question&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#site"&gt;The Site&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#frame"&gt;The Frame&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#species"&gt;Species &amp;amp; Soil&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#timelapse"&gt;Timelapse&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#output"&gt;The Output&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="fc"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h4&gt;Context&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Site: 6002. Cadde, Ankara&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Section: Beytepe Pond — Bilkent&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Elevation: 854 m — 891 m&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Period: 2004 – 2025&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Course: ARCH728&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="footer-bottom"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span&gt;ARCH728 — Reflections on Landscape / Soil as a Living System&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span&gt;6002. Cadde — Beytepe — Bilkent — Ankara&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const layerData=[</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{t:"Aerial / Canopy Layer",p:"The aerial layer comprises the above-ground biomass — primarily reed stands along water channels and shrub canopy at habitat margins. This layer moderates microclimate, captures airborne particles, and provides nesting structures for fauna. On disturbed sites, its absence marks zones of maximum ecological stress."},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{t:"Surface Vegetation Layer",p:"The surface vegetation layer (0–50 cm) hosts pioneer and ruderal species — the first colonisers of disturbed ground. On this site, Lamium purpureum and Bellis sp. occupy this layer, stabilising exposed soils and initiating organic matter accumulation essential for long-term soil health."},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{t:"Root / Microbial Layer",p:"The root and microbial zone (50 cm–1.5 m) is where the most intense soil metabolism occurs. Root exudates feed microbial communities; mycorrhizal networks exchange nutrients; clay particles bind water and minerals. This layer is the engine of soil health — and the most vulnerable to compaction from construction activity."},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{t:"Clayey Soil / Aquifer Layer",p:"The deep clay layer (1.5–3 m) acts simultaneously as a water aquifer and a chemical reservoir. Clay minerals — primarily smectite in Ankara's geology — swell and shrink with moisture cycles, creating the characteristic cracked surfaces visible across the site. This layer governs long-term drainage and water table dynamics."},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{t:"Bedrock / Basalt",p:"The basalt bedrock beneath the site represents geological time — the fixed substrate that shapes topography, drainage basin, and the ultimate fate of water moving through the system. In design terms, it is the datum against which all surface conditions are understood as temporary and transformable."}</p>
+<p class="p1">];</p>
+<p class="p1">function setL(i){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.layer-btn').forEach((b,j)=&gt;b.classList.toggle('active',j===i));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const d=document.getElementById('layerDetail');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>d.querySelector('h4').textContent=layerData[i].t;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>d.querySelector('p').textContent=layerData[i].p;</p>
+<p class="p1">}</p>
+<p class="p1">const secs=document.querySelectorAll('section.s[id]');</p>
+<p class="p1">const links=document.querySelectorAll('.nav-links a');</p>
+<p class="p1">window.addEventListener('scroll',()=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let cur='';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>secs.forEach(s=&gt;{if(window.scrollY&gt;=s.offsetTop-120)cur=s.id||'';});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>links.forEach(a=&gt;a.classList.toggle('active',a.getAttribute('href')==='#'+cur));</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
