@@ -3,622 +3,681 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Soil as a Living System — ARCH728</title>
+<title>Displaced Volume — ARCH728</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
-
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --cream:#f4f0e8;
-  --cream2:#ede9e0;
-  --cream3:#e8e3d8;
-  --ink:#1a1814;
-  --ink2:#3a3630;
-  --muted:#8a8478;
-  --rule:#c8c2b4;
-  --accent:#5c5040;
-  --red:#9b3a2a;
+  --cream:#f4f0e8;--cream2:#ede9e0;--cream3:#e8e3d8;--cream4:#ddd8cc;
+  --ink:#1a1814;--ink2:#3a3630;--muted:#8a8478;--rule:#c8c2b4;--accent:#5c5040;
 }
 html{scroll-behavior:smooth;}
-body{
-  background:var(--cream);
-  color:var(--ink);
-  font-family:'Montserrat',sans-serif;
-  font-weight:300;
-  overflow-x:hidden;
-}
+body{background:var(--cream);color:var(--ink);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;}
 
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:20px 48px;
-  background:rgba(244,240,232,0.94);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-}
-.nav-logo{font-size:10px;letter-spacing:3px;font-weight:500;text-transform:uppercase;color:var(--ink);}
-.nav-links{display:flex;gap:36px;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:9px;letter-spacing:2.5px;font-weight:500;text-transform:uppercase;transition:color .2s;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(244,240,232,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+.nav-logo{font-size:9px;letter-spacing:3px;font-weight:600;text-transform:uppercase;color:var(--ink);}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;transition:color .2s;cursor:pointer;}
 .nav-links a:hover,.nav-links a.active{color:var(--ink);}
 
-.hero{
-  min-height:100vh;
-  display:grid;
-  grid-template-rows:1fr auto;
-  padding:140px 48px 60px;
-  border-bottom:1px solid var(--rule);
-}
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-rows:1fr auto;padding:140px 48px 56px;border-bottom:1px solid var(--rule);}
 .hero-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;}
-.hero-eyebrow{
-  font-size:9px;letter-spacing:4px;font-weight:500;text-transform:uppercase;
-  color:var(--muted);margin-bottom:32px;
-  display:flex;align-items:center;gap:16px;
-}
+.hero-eyebrow{font-size:9px;letter-spacing:4px;font-weight:500;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:16px;}
 .hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--rule);}
-.hero h1{
-  font-size:clamp(52px,7vw,108px);
-  font-weight:800;
-  line-height:.95;
-  letter-spacing:-3px;
-  color:var(--ink);
-  text-transform:uppercase;
-}
-.hero h1 .thin{font-weight:100;letter-spacing:-2px;}
-.hero-right{padding-bottom:12px;}
-.hero-desc{
-  font-size:13px;line-height:1.85;color:var(--ink2);
-  max-width:380px;margin-bottom:40px;font-weight:300;
-}
-.hero-meta-row{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule);}
-.hm{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--rule);}
+.hero h1{font-size:clamp(48px,7vw,104px);font-weight:800;line-height:.92;letter-spacing:-3px;color:var(--ink);text-transform:uppercase;}
+.hero h1 .thin{font-weight:100;}
+.hero-desc{font-size:12px;line-height:1.9;color:var(--ink2);max-width:400px;margin-bottom:36px;font-weight:300;}
+.hero-meta-row{border-top:1px solid var(--rule);}
+.hm{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--rule);}
 .hm .k{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}
 .hm .v{font-size:11px;font-weight:400;color:var(--ink);}
-.hero-bottom{
-  display:flex;justify-content:space-between;align-items:center;
-  padding-top:40px;border-top:1px solid var(--rule);margin-top:40px;
-}
+.hero-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid var(--rule);margin-top:36px;}
 .hero-bottom-left{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}
-.scroll-cue{display:flex;align-items:center;gap:12px;font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}
-.scroll-cue::after{content:'↓';font-size:14px;font-weight:300;}
+.scroll-cue{display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}
+.scroll-cue::after{content:'↓';font-size:13px;font-weight:300;}
 
-.s{padding:120px 48px;border-bottom:1px solid var(--rule);}
-.s-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:80px;border-bottom:1px solid var(--rule);padding-bottom:20px;}
+/* SECTION COMMONS */
+.s{padding:112px 48px;border-bottom:1px solid var(--rule);}
+.s-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:72px;border-bottom:1px solid var(--rule);padding-bottom:18px;}
 .s-num{font-size:9px;letter-spacing:3px;font-weight:500;text-transform:uppercase;color:var(--muted);}
-.s-title{font-size:clamp(28px,4vw,56px);font-weight:800;letter-spacing:-2px;text-transform:uppercase;color:var(--ink);}
+.s-title{font-size:clamp(26px,4vw,54px);font-weight:800;letter-spacing:-2px;text-transform:uppercase;color:var(--ink);}
 .s-label{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}
 
+/* ZOOMABLE IMAGE */
+.zoom-wrap{position:relative;width:100%;overflow:hidden;background:#faf8f4;border:1px solid var(--rule);cursor:zoom-in;margin-bottom:8px;}
+.zoom-wrap img{width:100%;display:block;transform-origin:center center;transition:transform .3s ease;}
+.zoom-wrap.zoomed{cursor:zoom-out;}
+.zoom-wrap.zoomed img{transform:scale(2.2);}
+.zoom-hint{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:8px;}
+.zoom-hint::before{content:'⊕';font-size:11px;}
+.img-caption{font-size:10px;color:var(--muted);letter-spacing:.5px;font-weight:300;padding:10px 0 0;border-top:1px solid var(--rule);margin-bottom:40px;}
+
+/* SECTION DRAWING */
 #drawing{background:var(--cream2);}
-.drawing-meta{font-size:10px;letter-spacing:1px;color:var(--muted);margin-bottom:32px;font-weight:400;}
-.drawing-wrap{
-  width:100%;
-  background:#faf8f4;
-  border:1px solid var(--rule);
-  padding:40px;
-  margin-bottom:48px;
-}
-.drawing-svg-container{width:100%;overflow-x:auto;}
-.section-svg{width:100%;max-width:1200px;display:block;margin:0 auto;}
-.drawing-legend{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;padding-top:32px;border-top:1px solid var(--rule);}
-.legend-block h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}
-.legend-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:12px;}
-.legend-swatch{width:20px;height:10px;margin-top:3px;flex-shrink:0;}
+.drawing-meta{font-size:10px;letter-spacing:1px;color:var(--muted);margin-bottom:14px;font-weight:400;}
+.drawing-legend{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px;padding-top:28px;border-top:1px solid var(--rule);}
+.legend-block h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--ink);margin-bottom:14px;}
+.legend-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:10px;}
+.legend-swatch{width:20px;height:10px;margin-top:3px;flex-shrink:0;border:1px solid var(--rule);}
 .legend-text{font-size:11px;color:var(--ink2);line-height:1.6;font-weight:300;}
-.legend-text strong{font-weight:500;color:var(--ink);}
-.flow-item{font-size:11px;color:var(--ink2);line-height:1.7;padding-left:16px;position:relative;margin-bottom:8px;}
+.legend-text strong{font-weight:600;color:var(--ink);}
+.flow-item{font-size:11px;color:var(--ink2);line-height:1.7;padding-left:16px;position:relative;margin-bottom:8px;font-weight:300;}
 .flow-item::before{content:'›';position:absolute;left:0;color:var(--muted);}
 
-.inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
-.inv-card{background:var(--cream);padding:40px 32px;display:flex;flex-direction:column;gap:16px;}
-.inv-card-num{font-size:9px;letter-spacing:3px;font-weight:700;color:var(--muted);text-transform:uppercase;}
-.inv-card h3{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);}
-.inv-card p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;}
+/* PROPOSAL */
+.proposal-intro{font-size:13px;color:var(--ink2);line-height:1.9;max-width:760px;margin-bottom:48px;font-weight:300;}
+.proposal-intro strong{font-weight:700;color:var(--ink);}
 
-#question{background:var(--cream2);}
-.q-layout{display:grid;grid-template-columns:5fr 4fr;gap:80px;}
-.q-big{font-size:clamp(24px,3.5vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;text-transform:uppercase;color:var(--ink);margin-bottom:40px;}
-.q-body p{font-size:12px;color:var(--ink2);line-height:1.85;margin-bottom:16px;font-weight:300;}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}
-.tag{padding:6px 14px;border:1px solid var(--rule);font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--ink2);}
-.q-right{border-left:1px solid var(--rule);padding-left:48px;}
-.q-pull{font-size:clamp(18px,2.5vw,28px);font-weight:300;line-height:1.45;color:var(--ink2);font-style:italic;margin-bottom:40px;}
-.q-pull strong{font-weight:700;font-style:normal;color:var(--ink);}
+/* ACCORDION */
+.accordion{border-top:1px solid var(--rule);}
+.acc-item{border-bottom:1px solid var(--rule);}
+.acc-trigger{width:100%;display:flex;justify-content:space-between;align-items:center;padding:28px 0;cursor:pointer;background:none;border:none;text-align:left;}
+.acc-trig-left{display:flex;align-items:baseline;gap:24px;}
+.acc-trig-num{font-size:9px;letter-spacing:3px;font-weight:500;text-transform:uppercase;color:var(--muted);}
+.acc-trig-title{font-size:clamp(16px,2.5vw,28px);font-weight:800;letter-spacing:-1px;text-transform:uppercase;color:var(--ink2);transition:color .2s;}
+.acc-trig-label{font-size:9px;letter-spacing:2px;font-weight:500;text-transform:uppercase;color:var(--muted);}
+.acc-arrow{font-size:20px;font-weight:300;color:var(--muted);transition:transform .3s;}
+.acc-item.open .acc-arrow{transform:rotate(45deg);}
+.acc-item.open .acc-trig-title{color:var(--ink);}
+.acc-body{display:none;padding-bottom:48px;}
+.acc-item.open .acc-body{display:block;}
+.acc-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.acc-col{font-size:12px;color:var(--ink2);line-height:1.85;font-weight:300;}
+.acc-col p{margin-bottom:14px;}
+.acc-col strong{font-weight:600;color:var(--ink);}
 
-.tl-row{display:grid;grid-template-columns:80px 1fr 300px;gap:32px;align-items:start;padding:28px 0;border-bottom:1px solid var(--rule);}
-.tl-year{font-size:24px;font-weight:800;letter-spacing:-1px;color:var(--ink);}
-.tl-bar{height:1px;background:var(--rule);position:relative;margin-top:14px;}
-.tl-fill{height:1px;background:var(--ink);position:absolute;top:0;left:0;}
-.tl-event{font-size:11px;color:var(--ink2);line-height:1.6;font-weight:300;}
+/* OBSERVATION SITES */
+.sites-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-bottom:0;}
+.site-card{background:var(--cream);padding:40px 28px;cursor:pointer;transition:background .15s;}
+.site-card:hover,.site-card.active{background:var(--ink);color:#fff;}
+.site-card .sc-num{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.site-card.active .sc-num,.site-card:hover .sc-num{color:rgba(255,255,255,.5);}
+.site-card h3{font-size:16px;font-weight:800;letter-spacing:-0.5px;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}
+.site-card:hover h3,.site-card.active h3{color:#fff;}
+.site-card p{font-size:11px;color:var(--ink2);line-height:1.7;font-weight:300;}
+.site-card:hover p,.site-card.active p{color:rgba(255,255,255,.75);}
+.site-detail{background:var(--cream2);border:1px solid var(--rule);border-top:none;padding:48px;}
+.site-detail h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.site-detail p{font-size:13px;color:var(--ink2);line-height:1.9;font-weight:300;max-width:760px;}
+.site-detail p strong{font-weight:600;color:var(--ink);}
 
-#frame{background:var(--cream2);}
-.frame-3col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);}
-.frame-col{background:var(--cream2);padding:48px 32px;}
-.frame-col-num{font-size:9px;letter-spacing:3px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:24px;}
-.frame-col h3{font-size:18px;font-weight:800;letter-spacing:-0.5px;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}
-.frame-col p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;margin-bottom:24px;}
-.flow{display:flex;flex-direction:column;gap:4px;}
-.flow-node{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.fn{padding:6px 12px;background:var(--cream3);font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--ink);}
-.fa{font-size:10px;color:var(--muted);}
+/* THEORY */
+.theory-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);}
+.theory-cell{background:var(--cream);padding:28px 20px;}
+.theory-cell .tc-name{font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--ink);margin-bottom:4px;}
+.theory-cell .tc-year{font-size:9px;color:var(--muted);font-weight:300;margin-bottom:6px;}
+.theory-cell .tc-concept{font-size:9px;letter-spacing:1px;font-weight:500;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.theory-cell .tc-text{font-size:10px;color:var(--muted);line-height:1.6;font-weight:300;}
 
-.sp-table{width:100%;border-collapse:collapse;margin-bottom:80px;}
+/* SPECIES TABLE */
+.sp-table{width:100%;border-collapse:collapse;}
 .sp-table th{text-align:left;padding:12px 16px;font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);}
 .sp-table td{padding:20px 16px;font-size:11px;color:var(--ink2);border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.65;font-weight:300;}
 .sp-table tr:hover td{background:var(--cream2);}
-.sp-name{color:var(--ink);font-style:italic;font-weight:500;display:block;margin-bottom:2px;}
+.sp-name{color:var(--ink);font-style:italic;font-weight:500;display:block;margin-bottom:3px;}
+.sp-common{font-weight:400;font-style:normal;color:var(--ink2);}
 
-.layers-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);}
-.layer-btn{background:var(--cream);padding:24px 28px;cursor:pointer;border:none;text-align:left;width:100%;transition:background .15s;}
-.layer-btn:hover,.layer-btn.active{background:var(--ink);color:#fff !important;}
-.layer-btn .ln{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);}
-.layer-btn .ld{font-size:10px;color:var(--muted);margin-top:4px;font-weight:300;}
+/* LAYERS */
+.layers-wrap{border:1px solid var(--rule);}
+.layers-top{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);}
+.layer-btn{background:var(--cream);padding:20px 18px;cursor:pointer;border:none;text-align:left;width:100%;transition:background .15s;}
+.layer-btn.active{background:var(--ink);}
+.layer-btn .ln{font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--ink);}
+.layer-btn .ld{font-size:9px;color:var(--muted);margin-top:4px;font-weight:300;}
 .layer-btn.active .ln,.layer-btn.active .ld{color:#fff;}
-.layer-detail{background:var(--cream2);padding:48px;border-top:1px solid var(--rule);grid-column:1/-1;}
-.layer-detail h4{font-size:11px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.layer-detail{background:var(--cream2);padding:40px;border-top:1px solid var(--rule);}
+.layer-detail h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
 .layer-detail p{font-size:13px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:700px;}
 
-#timelapse{background:var(--cream2);}
-.tl-intro-text{font-size:13px;color:var(--ink2);line-height:1.85;max-width:600px;margin-bottom:64px;font-weight:300;}
+/* TIMELAPSE */
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);}
-.phase{background:var(--cream2);padding:40px 32px;}
-.phase-tag{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
-.phase-years{font-size:40px;font-weight:800;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:16px;}
-.phase-title{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
+.phase{background:var(--cream2);padding:36px 28px;}
+.phase-tag{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.phase-years{font-size:38px;font-weight:800;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:14px;}
+.phase-title{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}
 .phase p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;}
-.phase-dots{display:flex;gap:4px;margin-top:20px;}
+.phase-dots{display:flex;gap:4px;margin-top:18px;}
 .dot{width:6px;height:6px;background:var(--rule);}
 .dot.on{background:var(--ink);}
 
-.out-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);margin-bottom:80px;}
-.out-cell{background:var(--cream);padding:48px 32px;}
-.out-num{font-size:72px;font-weight:800;letter-spacing:-4px;color:var(--cream3);line-height:1;margin-bottom:16px;}
-.out-cell h3{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
-.out-cell p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;}
-.concept-box{background:var(--cream2);border:1px solid var(--rule);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;}
-.concept-box-text h3{font-size:16px;font-weight:800;letter-spacing:-0.5px;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}
-.concept-box-text p{font-size:12px;color:var(--ink2);line-height:1.85;font-weight:300;}
-.concept-diagram{display:flex;flex-direction:column;gap:1px;}
-.cd-row{display:flex;align-items:stretch;gap:1px;}
-.cd-cell{flex:1;background:var(--cream);padding:16px 20px;}
-.cd-cell .ct{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-.cd-cell .cv{font-size:10px;color:var(--ink2);line-height:1.5;font-weight:300;}
+/* CONCEPTUAL FRAMEWORK */
+.cf-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);margin-bottom:64px;}
+.cf-cell{background:var(--cream);padding:48px 36px;position:relative;}
+.cf-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--ink);}
+.cf-num{font-size:64px;font-weight:800;letter-spacing:-4px;color:var(--cream3);line-height:1;margin-bottom:12px;}
+.cf-cell h3{font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}
+.cf-cell p{font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;}
+.rq-box{background:var(--cream2);border:1px solid var(--rule);padding:48px;}
+.rq-box .rq-label{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.rq-box p{font-size:14px;color:var(--ink);line-height:1.75;font-weight:300;font-style:italic;max-width:800px;}
+.rq-box p strong{font-weight:700;font-style:normal;}
 
-footer{padding:80px 48px 48px;background:var(--ink);color:var(--cream);}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px;padding-bottom:48px;border-bottom:1px solid #3a3630;}
-.ft-title{font-size:clamp(24px,3vw,40px);font-weight:800;letter-spacing:-1.5px;text-transform:uppercase;color:var(--cream);margin-bottom:8px;}
+/* FOOTER */
+footer{padding:72px 48px 44px;background:var(--ink);color:var(--cream);}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:72px;padding-bottom:44px;border-bottom:1px solid #3a3630;}
+.ft-title{font-size:clamp(20px,2.8vw,36px);font-weight:800;letter-spacing:-1.5px;text-transform:uppercase;color:var(--cream);line-height:1.05;margin-bottom:10px;}
 .ft-sub{font-size:10px;letter-spacing:3px;font-weight:500;text-transform:uppercase;color:#8a8478;}
-.fc h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:#8a8478;margin-bottom:16px;}
-.fc a,.fc p{font-size:11px;color:#c8c2b4;line-height:2;display:block;text-decoration:none;font-weight:300;}
+.fc h4{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:#8a8478;margin-bottom:14px;}
+.fc a,.fc p{font-size:11px;color:#c8c2b4;line-height:2.1;display:block;text-decoration:none;font-weight:300;}
 .fc a:hover{color:var(--cream);}
-.footer-bottom{display:flex;justify-content:space-between;padding-top:32px;font-size:10px;letter-spacing:1px;color:#5a5448;font-weight:300;}
+.footer-bottom{display:flex;justify-content:space-between;padding-top:28px;font-size:10px;letter-spacing:1px;color:#5a5448;font-weight:300;}
 
 @media(max-width:900px){
-  nav{padding:16px 24px;}
-  .nav-links{display:none;}
-  .s,.hero{padding:80px 24px;}
+  nav{padding:14px 20px;}.nav-links{display:none;}
+  .s,.hero{padding:72px 20px;}
+  .hero-top,.acc-grid-2,.sites-grid,.phases,.cf-wrap,.theory-row,.layers-top,.footer-top{grid-template-columns:1fr;}
+  .drawing-legend{grid-template-columns:1fr;}
   .hero h1{letter-spacing:-2px;}
-  .hero-top,.q-layout,.frame-3col,.out-grid,.phases,.inv-grid,.drawing-legend,.layers-wrap,.concept-box,.footer-top{grid-template-columns:1fr;}
-  .tl-row{grid-template-columns:60px 1fr;}
-  .tl-event{display:none;}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">ARCH728 — Reflections on Landscape</div>
+  <div class="nav-logo">Displaced Volume — ARCH728</div>
   <div class="nav-links">
     <a href="#drawing">Section</a>
-    <a href="#inventory">Inventory</a>
-    <a href="#question">Question</a>
-    <a href="#site">Site</a>
-    <a href="#frame">Frame</a>
+    <a href="#proposal">Research</a>
+    <a href="#sites">Sites</a>
+    <a href="#theory">Theory</a>
+    <a href="#methodology">Methodology</a>
     <a href="#species">Species</a>
     <a href="#timelapse">Timelapse</a>
-    <a href="#output">Output</a>
+    <a href="#output">Framework</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-top">
     <div>
       <div class="hero-eyebrow">ARCH728 — Reflections on Landscape</div>
-      <h1><span class="thin">Soil</span><br>as a<br>Living<br>System</h1>
+      <h1><span class="thin">Displaced</span><br>Volume</h1>
     </div>
-    <div class="hero-right">
-      <p class="hero-desc">A landscape research investigation into the 6002. Cadde corridor, Ankara — tracing soil metabolism, species habitat, and twenty-one years of urban transformation through satellite imagery, field surveys, and section analysis.</p>
+    <div>
+      <p class="hero-desc">Soil Mobility and the Ecological Afterlives — a landscape research investigation into the unintended ecological consequences of large-scale excavation in Ankara, centred on the construction of Bilkent City Hospital and its material afterlives at Beytepe Pond, the Arboretum, and the Botanical Park.</p>
       <div class="hero-meta-row">
-        <div class="hm"><span class="k">Site</span><span class="v">6002. Cadde, Ankara</span></div>
-        <div class="hm"><span class="k">Period</span><span class="v">2004 — 2025</span></div>
-        <div class="hm"><span class="k">Focus</span><span class="v">Soil Metabolism / Habitat / Species</span></div>
-        <div class="hm"><span class="k">Section</span><span class="v">Beytepe Pond — Bilkent, 1.42 km</span></div>
-        <div class="hm"><span class="k">Elevation range</span><span class="v">854 m — 891 m / avg. slope 2.9%</span></div>
+        <div class="hm"><span class="k">Research Title</span><span class="v">Displaced Volume: Soil Mobility and the Ecological Afterlives</span></div>
+        <div class="hm"><span class="k">Primary Site</span><span class="v">Bilkent City Hospital — Beytepe — Ankara</span></div>
+        <div class="hm"><span class="k">Observation Areas</span><span class="v">Beytepe Pond / Arboretum / Botanical Park</span></div>
+        <div class="hm"><span class="k">Section</span><span class="v">Beytepe Pond — Bilkent, 1.42 km · 854–891 m</span></div>
+        <div class="hm"><span class="k">Course</span><span class="v">ARCH728 — Reflections on Landscape</span></div>
       </div>
     </div>
   </div>
   <div class="hero-bottom">
-    <div class="hero-bottom-left">Beytepe — Bilkent — 6002. Cadde</div>
+    <div class="hero-bottom-left">Soil as Archive · Metabolic Circulation · Ecological Afterlives</div>
     <div class="scroll-cue">Scroll to explore</div>
   </div>
 </div>
 
+<!-- SECTION DRAWING -->
 <section class="s" id="drawing">
   <div class="s-header">
     <span class="s-num">00</span>
     <h2 class="s-title">Beytepe Pond — Bilkent Section</h2>
-    <span class="s-label">Soil Movement &amp; Habitat</span>
+    <span class="s-label">Soil Movement &amp; Habitat · Bilkent KMZ Section 4, 2024</span>
   </div>
-  <p class="drawing-meta">Bilkent KMZ Section 4 (2024) · min. 854 m — max. 891 m · 1.42 km · avg. slope 2.9%</p>
-  <div class="drawing-wrap">
-    <div class="drawing-svg-container">
-      <svg class="section-svg" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat,sans-serif">
-        <rect width="1200" height="420" fill="#faf8f4"/>
-        <text x="18" y="98" font-size="9" fill="#8a8478" font-weight="400">891 m</text>
-        <text x="18" y="178" font-size="9" fill="#8a8478" font-weight="400">875 m</text>
-        <text x="18" y="258" font-size="9" fill="#8a8478" font-weight="400">864 m</text>
-        <text x="18" y="318" font-size="9" fill="#8a8478" font-weight="400">854 m</text>
-        <line x1="48" y1="96" x2="1180" y2="96" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/>
-        <line x1="48" y1="176" x2="1180" y2="176" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/>
-        <line x1="48" y1="256" x2="1180" y2="256" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/>
-        <line x1="48" y1="316" x2="1180" y2="316" stroke="#e0dbd0" stroke-width=".5" stroke-dasharray="3,4"/>
-        <defs>
-          <pattern id="dots" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
-            <circle cx="1.5" cy="1.5" r=".9" fill="#b0a898"/>
-          </pattern>
-          <pattern id="crosshatch" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
-            <line x1="0" y1="0" x2="5" y2="5" stroke="#b0a898" stroke-width=".6"/>
-            <line x1="5" y1="0" x2="0" y2="5" stroke="#b0a898" stroke-width=".6"/>
-          </pattern>
-          <pattern id="hlines" x="0" y="0" width="5" height="4" patternUnits="userSpaceOnUse">
-            <line x1="0" y1="2" x2="5" y2="2" stroke="#b0a898" stroke-width=".7"/>
-          </pattern>
-        </defs>
-        <polygon points="48,316 48,340 1160,340 1160,96 980,96 900,130 750,200 600,240 450,270 300,290 160,308 100,314 48,316" fill="url(#dots)" opacity=".55"/>
-        <rect x="48" y="330" width="1112" height="16" fill="#3a3630" opacity=".7"/>
-        <rect x="48" y="318" width="1112" height="12" fill="url(#hlines)" opacity=".6"/>
-        <polygon points="48,316 100,314 160,308 300,290 450,270 600,240 750,200 900,130 980,96 1000,96 980,106 900,140 750,210 600,250 450,282 300,302 160,320 100,326 48,328" fill="url(#crosshatch)" opacity=".35"/>
-        <polyline points="48,316 100,314 160,308 300,290 450,270 600,240 750,200 900,130 980,96 1160,96" fill="none" stroke="#1a1814" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
-        <rect x="48" y="300" width="80" height="16" fill="#8ab0c0" opacity=".5" rx="2"/>
-        <polygon points="480,270 520,240 560,270" fill="url(#dots)" stroke="#1a1814" stroke-width="1" opacity=".8"/>
-        <text x="490" y="230" font-size="8" fill="#5c5040" font-weight="500">excavated fill</text>
-        <polygon points="760,200 810,170 860,200" fill="url(#crosshatch)" stroke="#1a1814" stroke-width=".8" opacity=".7"/>
-        <polygon points="820,170 850,148 880,170" fill="url(#crosshatch)" stroke="#1a1814" stroke-width=".8" opacity=".7"/>
-        <text x="790" y="160" font-size="8" fill="#5c5040" font-weight="500">imported fill</text>
-        <rect x="680" y="208" width="180" height="52" fill="none" stroke="#1a1814" stroke-width="1"/>
-        <text x="693" y="226" font-size="9" fill="#1a1814" font-weight="700">Bilkent Hospital</text>
-        <text x="693" y="240" font-size="7.5" fill="#8a8478" font-weight="300">surface water flow — diffuse</text>
-        <text x="693" y="252" font-size="7.5" fill="#8a8478" font-weight="300">through clayey strata</text>
-        <g transform="translate(50,285)">
-          <line x1="0" y1="24" x2="0" y2="0" stroke="#5c5040" stroke-width="1.2"/>
-          <ellipse cx="0" cy="-2" rx="2" ry="6" fill="#5c5040" opacity=".7"/>
-          <line x1="8" y1="24" x2="8" y2="2" stroke="#5c5040" stroke-width="1.2"/>
-          <ellipse cx="8" cy="0" rx="2" ry="6" fill="#5c5040" opacity=".7"/>
-          <line x1="16" y1="24" x2="16" y2="1" stroke="#5c5040" stroke-width="1.2"/>
-          <ellipse cx="16" cy="-1" rx="2" ry="6" fill="#5c5040" opacity=".7"/>
-          <line x1="24" y1="24" x2="24" y2="3" stroke="#5c5040" stroke-width="1.2"/>
-          <ellipse cx="24" cy="1" rx="2" ry="6" fill="#5c5040" opacity=".7"/>
-          <line x1="32" y1="24" x2="32" y2="0" stroke="#5c5040" stroke-width="1.2"/>
-          <ellipse cx="32" cy="-2" rx="2" ry="6" fill="#5c5040" opacity=".7"/>
-        </g>
-        <text x="48" y="278" font-size="8.5" fill="#1a1814" font-weight="700">Phragmites australis</text>
-        <text x="48" y="289" font-size="7.5" fill="#8a8478" font-weight="300">reed — clayey, waterlogged soil indicator</text>
-        <circle cx="290" cy="290" r="5" fill="none" stroke="#5c5040" stroke-width="1"/>
-        <text x="245" y="275" font-size="8.5" fill="#1a1814" font-weight="700">Lamium purpureum</text>
-        <text x="245" y="286" font-size="7.5" fill="#8a8478">moist, disturbed clayey soil</text>
-        <circle cx="960" cy="106" r="14" fill="none" stroke="#1a1814" stroke-width="1"/>
-        <line x1="960" y1="120" x2="960" y2="130" stroke="#1a1814" stroke-width="1.2"/>
-        <text x="930" y="97" font-size="7.5" fill="#8a8478">polliniferous tree sp. — Apis mellifera</text>
-        <text x="110" y="308" font-size="7.5" fill="#8a8478">Botanic Garden</text>
-        <text x="110" y="316" font-size="7.5" fill="#8a8478">6002. Cadde</text>
-        <text x="48" y="358" font-size="9" fill="#1a1814" font-weight="700">Beytepe Pond</text>
-        <text x="48" y="370" font-size="7.5" fill="#8a8478">clayeyish · lakeside</text>
-        <line x1="48" y1="390" x2="1160" y2="390" stroke="#1a1814" stroke-width=".8"/>
-        <line x1="48" y1="386" x2="48" y2="394" stroke="#1a1814" stroke-width=".8"/>
-        <line x1="330" y1="386" x2="330" y2="394" stroke="#1a1814" stroke-width=".8"/>
-        <line x1="612" y1="386" x2="612" y2="394" stroke="#1a1814" stroke-width=".8"/>
-        <line x1="894" y1="386" x2="894" y2="394" stroke="#1a1814" stroke-width=".8"/>
-        <line x1="1160" y1="386" x2="1160" y2="394" stroke="#1a1814" stroke-width=".8"/>
-        <text x="44" y="404" font-size="8.5" fill="#1a1814" font-weight="300">0 km</text>
-        <text x="318" y="404" font-size="8.5" fill="#8a8478" font-weight="300">0.30</text>
-        <text x="600" y="404" font-size="8.5" fill="#8a8478" font-weight="300">0.60</text>
-        <text x="882" y="404" font-size="8.5" fill="#8a8478" font-weight="300">0.90</text>
-        <text x="1130" y="404" font-size="8.5" fill="#1a1814" font-weight="300">1.42 km</text>
-        <text x="1175" y="200" font-size="8" fill="#8a8478" font-weight="300">· Soil metabolism</text>
-        <text x="1175" y="214" font-size="8" fill="#8a8478" font-weight="300">· Material flows</text>
-        <text x="1175" y="228" font-size="8" fill="#8a8478" font-weight="300">· Imported &amp; alluvial soils</text>
-        <text x="1175" y="242" font-size="8" fill="#8a8478" font-weight="300">· Boundary dynamics</text>
-        <text x="1175" y="256" font-size="8" fill="#8a8478" font-weight="300">· Landscape transformation</text>
-      </svg>
-    </div>
+  <p class="drawing-meta">min. 854 m — max. 891 m · 1.42 km · avg. slope 2.9% · Excavated, imported, alluvial and fill soils</p>
+
+  <div class="zoom-hint">Click image to zoom</div>
+  <div class="zoom-wrap" id="z-section" onclick="toggleZoom('z-section',event)">
+    <img id="img-section" alt="Beytepe Pond — Bilkent Section / Soil Movement and Habitat" style="width:100%;display:block;"/>
   </div>
+  <p class="img-caption">Beytepe Pond — Bilkent Section / Soil Movement and Habitat · Bilkent KMZ Section 4 (2024) · min. 854 m — max. 891 m · 1.42 km · avg. slope 2.9%</p>
+
   <div class="drawing-legend">
     <div class="legend-block">
       <h4>Soil Strata</h4>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:repeating-linear-gradient(45deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 4px);border:1px solid #c8c2b4;"></div>
-        <div class="legend-text"><strong>Surface soil</strong> — heterogeneous anthropogenic fill, disturbed by construction and road works</div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:radial-gradient(circle,#b0a898 30%,transparent 30%) 0 0 / 5px 5px;border:1px solid #c8c2b4;"></div>
-        <div class="legend-text"><strong>Clayey layer</strong> — Ankara clays, water-retaining, carrier of reed habitat</div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:repeating-linear-gradient(0deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 3px);border:1px solid #c8c2b4;"></div>
-        <div class="legend-text"><strong>Bedrock / basalt</strong> — impermeable base, traps water within the clay matrix</div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:repeating-linear-gradient(-45deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 4px);border:1px solid #c8c2b4;"></div>
-        <div class="legend-text"><strong>Excavated fill mound</strong> — construction spoil, triggers redistribution of subsurface water</div>
-      </div>
+      <div class="legend-item"><div class="legend-swatch" style="background:repeating-linear-gradient(0deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 3px);"></div><div class="legend-text"><strong>Surface soil</strong> — heterogeneous anthropogenic fill, disturbed by construction and road works</div></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:radial-gradient(circle,#b0a898 30%,transparent 30%) 0 0/5px 5px;"></div><div class="legend-text"><strong>Clayey layer</strong> — Ankara clays, water-retaining, carrier of reed habitat and capillary moisture</div></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:repeating-linear-gradient(0deg,#3a3630 0,#3a3630 2px,transparent 0,transparent 4px);"></div><div class="legend-text"><strong>Bedrock / basalt</strong> — impermeable base, traps water within the clay matrix above</div></div>
+      <div class="legend-item"><div class="legend-swatch" style="background:repeating-linear-gradient(-45deg,#b0a898 0,#b0a898 1px,transparent 0,transparent 4px);"></div><div class="legend-text"><strong>Excavated fill mound</strong> — construction spoil from Bilkent City Hospital, triggers redistribution of subsurface water</div></div>
     </div>
     <div class="legend-block">
       <h4>Flow &amp; Movement</h4>
-      <div class="flow-item">Subsurface water flow — lateral, following slope gradient</div>
+      <div class="flow-item">Subsurface water flow — lateral, following slope gradient from hospital site toward Beytepe Pond</div>
       <div class="flow-item">Upward capillary rise — water diffuses from clay matrix to surface through road incision</div>
+      <div class="flow-item">Excavation pressure displaces subsurface flow upward — reed stands at roadsides are surface evidence of this diffusion</div>
     </div>
   </div>
 </section>
 
-<section class="s" id="inventory">
+<!-- RESEARCH PROPOSAL -->
+<section class="s" id="proposal">
   <div class="s-header">
     <span class="s-num">01</span>
-    <h2 class="s-title">The Inventory</h2>
-    <span class="s-label">Site Documentation</span>
+    <h2 class="s-title">Displaced Volume</h2>
+    <span class="s-label">Soil Mobility and the Ecological Afterlives</span>
   </div>
-  <div class="inv-grid">
-    <div class="inv-card"><div class="inv-card-num">01 — A</div><h3>Site Context</h3><p>The 6002. Cadde corridor in Ankara — a transitional landscape between urban infrastructure and remnant natural systems, shaped by decades of road development and continuous soil displacement.</p></div>
-    <div class="inv-card"><div class="inv-card-num">01 — B</div><h3>Soil Type Info-base</h3><p>Systematic documentation of soil conditions: alluvial deposits, engineered fill zones, imported soils, and excavated strata — each carrying distinct ecological memory and metabolic capacity.</p></div>
-    <div class="inv-card"><div class="inv-card-num">01 — C</div><h3>Aerial Documentation</h3><p>Satellite imagery series from 2004 to 2025. Transformation every 5 years between 2005 and 2025 — and monthly from 2014 through 2019 for the construction period.</p></div>
-    <div class="inv-card"><div class="inv-card-num">01 — D</div><h3>Key Words</h3><p>Soil metabolism · water-soil flow · clay mineral activity · species indicators · landscape transformation · habitat strata · ecological succession · boundary dynamics</p></div>
-    <div class="inv-card"><div class="inv-card-num">01 — E</div><h3>Psychological Aspects of Soil</h3><p>Beyond technical analysis: how soil conditions shape sensory and emotional experience of landscape — the materiality of earth as a medium of perception and collective memory.</p></div>
-    <div class="inv-card"><div class="inv-card-num">01 — F</div><h3>Water-Soil Flow Mapping</h3><p>Hydrological dynamics at the Beytepe Pond–Bilkent section — tracing how lateral and capillary water movement governs soil stratification and habitat formation along the slope.</p></div>
-  </div>
-</section>
 
-<section class="s" id="question">
-  <div class="s-header">
-    <span class="s-num">02</span>
-    <h2 class="s-title">The Question</h2>
-    <span class="s-label">Research Framework</span>
+  <div class="proposal-intro">
+    This study emerges from a critical engagement with debates that reconceptualize urban soil not as a stable ground, but as a <strong>dynamic, relational, and metabolically active medium</strong>. In Ankara, the large-scale excavation processes associated with the construction of <strong>Bilkent City Hospital</strong> have displaced and redistributed significant volumes of soil — transferring not only material, but embedded biological, chemical, and hydrological properties. At Beytepe Pond, the emergence of <strong>wetland vegetation in an area expected to exhibit steppe characteristics</strong> suggests that transported soils carry latent ecological potentials activated under new environmental conditions.
   </div>
-  <div class="q-layout">
-    <div>
-      <div class="q-big">How does soil<br>metabolize urban<br>transformation?</div>
-      <div class="q-body">
-        <p>The site around 6002. Cadde is not merely a backdrop to urban development — it is an active participant. Soils accumulate, shift, and respond; they carry the trace of every disturbance while sustaining the conditions for ecological recovery.</p>
-        <p>This research asks: what can the soil tell us about the history and future of a landscape? How do species act as indicators of soil health? And how might design work with — rather than against — the metabolic processes already underway?</p>
-        <p>The investigation moves between scales: from the molecular chemistry of clay particles to the territorial pattern of road infrastructure; from monthly satellite readings to the lifespan of a reed colony along the Beytepe shoreline.</p>
-        <div class="tag-cloud">
-          <span class="tag">Soil Metabolism</span>
-          <span class="tag">Landscape Ecology</span>
-          <span class="tag">Clayey Soil</span>
-          <span class="tag">Water-Soil Flow</span>
-          <span class="tag">Species Indicators</span>
-          <span class="tag">Urban Transformation</span>
+
+  <!-- Image 4: steppe / Beytepe Village -->
+  <div class="zoom-hint">Click image to zoom</div>
+  <div class="zoom-wrap" id="z-steppe" onclick="toggleZoom('z-steppe',event)">
+    <img id="img-steppe" alt="Beytepe Village, Beytepe I Mound, 2004" style="width:100%;display:block;"/>
+  </div>
+  <p class="img-caption">Beytepe Village, Beytepe I Mound, 2004</p>
+
+  <div class="proposal-intro" style="margin-top:40px;">
+    The methodology also incorporates <strong>territorial relationality</strong> — a multi-scalar reading of the Bilkent area as a relational territory in which soil movements, hydrological systems, and ecological formations are understood not in isolation but as expressions of a connected fluvial and geological structure. The stream system constituting the fluvial infrastructure of Ankara — from Ankara Çubuk Çayı to İmrahor Deresi and beyond — provides the territorial frame within which the displacement of soil from the Bilkent excavation zone must be read.
+  </div>
+
+  <!-- Image 5: Ankara stream system -->
+  <div class="zoom-hint">Click image to zoom</div>
+  <div class="zoom-wrap" id="z-streams" onclick="toggleZoom('z-streams',event)">
+    <img id="img-streams" alt="The stream system that constitute the fluvial structure of Ankara" style="width:100%;display:block;"/>
+  </div>
+  <p class="img-caption">The stream system that constitute the fluvial structure of Ankara</p>
+
+  <div class="accordion" style="margin-top:64px;">
+    <div class="acc-item open">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        <div class="acc-trig-left"><span class="acc-trig-num">01 — A</span><span class="acc-trig-title">Background &amp; Argument</span></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="acc-trig-label">Soil as Archive</span><span class="acc-arrow">+</span></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-grid-2">
+          <div class="acc-col">
+            <p>The movement of soil through excavation practices produces new assemblages between ground, water, and vegetation, <strong>destabilizing conventional distinctions between natural and artificial environments</strong>. Rather than treating emergent formations as anomalies, this study interprets them as indicators of a disrupted yet generative soil metabolism.</p>
+            <p>Transported soils are not inert material — they carry traces of their origin: microbial communities, clay mineral compositions, hydrological memory, and seed banks. When deposited in a new location, these properties become latent, awaiting the conditions for reactivation.</p>
+            <p>This reappearance of ecological relations and histories embedded within soil — now made visible in a different spatial context — is understood here as an <strong>ecological afterlife</strong>: the continuation of a soil system's metabolic and biological capacities beyond its original site.</p>
+          </div>
+          <div class="acc-col">
+            <p>The study is guided by the following central question: <em>How does the mobility of urban soil reconfigure new ecological conditions and generate unexpected habitats?</em></p>
+            <p>In the case of partial observation — Beytepe Pond, Bilkent City Hospital, and the Arboretum — do the emergent plant formations prove the erasure of the steppe, or do they reveal the <strong>soil's capacity to retain and rearticulate its own ecological archive</strong> in a new location?</p>
+            <p>Through these questions, the study repositions soil not as a passive substrate to be stabilized, but as an <strong>active agent</strong> whose circulation reshapes urban ecologies, produces new forms of habitability, and simultaneously carries and reactivates traces of past environments.</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="q-right">
-      <p class="q-pull">"Soil is not <strong>ground</strong> — it is a system, an archive, and a <strong>living infrastructure</strong> in continuous negotiation with everything built upon it."</p>
-      <div style="border-top:1px solid var(--rule);padding-top:24px;">
-        <div style="font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Methodology Search</div>
-        <p style="font-size:11px;color:var(--ink2);line-height:1.75;font-weight:300;">Field surveys at Beytepe Pond and 6002. Cadde · Satellite image analysis (Google Earth, 2004–2025) · Bilkent KMZ Section documentation · Species inventory with soil correlation · Conceptual framework: Soil Movement → Soil Metabolism → Habitat</p>
+    <div class="acc-item">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        <div class="acc-trig-left"><span class="acc-trig-num">01 — B</span><span class="acc-trig-title">Research Question</span></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="acc-trig-label">Core Inquiry</span><span class="acc-arrow">+</span></div>
+      </button>
+      <div class="acc-body">
+        <div class="rq-box">
+          <div class="rq-label">Research Question</div>
+          <p>How does the mobility of urban soil <strong>reconfigure new ecological conditions</strong> and generate unexpected habitats? In the case of partial observation — Beytepe Pond, Bilkent City Hospital and Arboretum — do the emergent plant formations prove <strong>the erasure of the steppe</strong>, or do they reveal the soil's capacity to retain and rearticulate <strong>its own ecological archive</strong> in a new location?</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="s" id="site">
+<!-- OBSERVATION SITES -->
+<section class="s" id="sites">
+  <div class="s-header">
+    <span class="s-num">02</span>
+    <h2 class="s-title">Observation Sites</h2>
+    <span class="s-label">Three Partial Areas of Investigation</span>
+  </div>
+  <p style="font-size:12px;color:var(--muted);max-width:640px;line-height:1.85;margin-bottom:48px;font-weight:300;">The research examines the site in three distinct but relational parts — each offering a different scale and condition of soil displacement, ecological emergence, and metabolic activity.</p>
+
+  <div class="sites-grid">
+    <div class="site-card active" onclick="setSite(0)">
+      <div class="sc-num">Phase I</div>
+      <h3>Beytepe Pond</h3>
+      <p>Wetland vegetation emerging in steppe context — primary indicator of displaced soil properties and latent ecological potential.</p>
+    </div>
+    <div class="site-card" onclick="setSite(1)">
+      <div class="sc-num">Phase II</div>
+      <h3>Bilkent City Hospital &amp; Arboretum</h3>
+      <p>The origin point of large-scale excavation — where soil was extracted, transported, and redistributed across the territory.</p>
+    </div>
+    <div class="site-card" onclick="setSite(2)">
+      <div class="sc-num">Phase III</div>
+      <h3>Botanical Park — Unfinished Entry</h3>
+      <p>Uncompleted construction and vegetation processes resulted in wilderness within a designed area — reflecting the ever-changing status of ecological particles.</p>
+    </div>
+  </div>
+  <div class="site-detail" id="siteDetail">
+    <h4>Phase I — Beytepe Pond</h4>
+    <p>The Beytepe Pond and the unfinished parts of the Botanical Park are approached as a <strong>critical site where displaced soil dynamics become materially observable</strong>. In an area expected to exhibit steppe characteristics, the emergence of wetland vegetation — reeds (<em>Phragmites australis</em>), dead nettle (<em>Lamium purpureum</em>), and land snail — around the pond and within excavation-related grounds suggests that <strong>transported soils carry latent ecological potentials that become activated under new environmental conditions</strong>. Field observations focus on soil composition, surface conditions, moisture patterns, and the emergence of vegetation in areas where such ecologies would not typically occur.</p>
+  </div>
+</section>
+
+<!-- THEORY -->
+<section class="s" id="theory">
   <div class="s-header">
     <span class="s-num">03</span>
-    <h2 class="s-title">The Site</h2>
-    <span class="s-label">Transformation 2004 — 2025</span>
+    <h2 class="s-title">Theoretical Frame</h2>
+    <span class="s-label">Key Perspectives</span>
   </div>
-  <p style="font-size:12px;color:var(--muted);max-width:600px;line-height:1.85;margin-bottom:64px;font-weight:300;">6002. Cadde, Ankara — a corridor undergoing continuous transformation driven by infrastructure expansion, soil movement, and the persistence of ecological systems.</p>
-  <div class="tl-row"><span class="tl-year">2004</span><div><div class="tl-bar"><div class="tl-fill" style="width:10%"></div></div></div><span class="tl-event">Pre-development — agricultural and semi-natural condition intact</span></div>
-  <div class="tl-row"><span class="tl-year">2008</span><div><div class="tl-bar"><div class="tl-fill" style="width:25%"></div></div></div><span class="tl-event">Initial road alignment visible — early soil displacement begins</span></div>
-  <div class="tl-row"><span class="tl-year">2012</span><div><div class="tl-bar"><div class="tl-fill" style="width:45%"></div></div></div><span class="tl-event">Significant road expansion — land fragmentation visible from satellite</span></div>
-  <div class="tl-row"><span class="tl-year">2014–2015</span><div><div class="tl-bar"><div class="tl-fill" style="width:62%"></div></div></div><span class="tl-event">Construction intensifies — imported fill soils, monthly imagery available</span></div>
-  <div class="tl-row"><span class="tl-year">2017–2019</span><div><div class="tl-bar"><div class="tl-fill" style="width:82%"></div></div></div><span class="tl-event">Road fully developed — movement of surrounding environment tracked monthly</span></div>
-  <div class="tl-row"><span class="tl-year">2025</span><div><div class="tl-bar"><div class="tl-fill" style="width:100%"></div></div></div><span class="tl-event">Current state — layered landscape of infrastructure, disturbed and recovering soil</span></div>
+  <p style="font-size:12px;color:var(--muted);max-width:640px;line-height:1.85;margin-bottom:48px;font-weight:300;">The research draws on five theoretical perspectives that collectively reframe urban soil as a dynamic, relational, and politically charged medium — moving beyond instrumentalized understandings of earth as mere substrate.</p>
+  <div class="theory-row">
+    <div class="theory-cell">
+      <div class="tc-name">Meulemans</div>
+      <div class="tc-year">(2020)</div>
+      <div class="tc-concept">Soil as Produced</div>
+      <div class="tc-text">Urban soil is not found but made — continuously produced through human intervention, infrastructure, and material displacement. Urban pedogenesis as political process.</div>
+    </div>
+    <div class="theory-cell">
+      <div class="tc-name">Clark</div>
+      <div class="tc-year">(2016)</div>
+      <div class="tc-concept">Stratified &amp; Political</div>
+      <div class="tc-text">Soil is stratified and politically charged — its layers encode histories of power, land use, and ecological violence across time and space.</div>
+    </div>
+    <div class="theory-cell">
+      <div class="tc-name">McNeill</div>
+      <div class="tc-year">(2020)</div>
+      <div class="tc-concept">Volumetric Governance</div>
+      <div class="tc-text">Soil is governed volumetrically — its management is a three-dimensional spatial and political practice with deep ecological consequences.</div>
+    </div>
+    <div class="theory-cell">
+      <div class="tc-name">Harris</div>
+      <div class="tc-year">(2025)</div>
+      <div class="tc-concept">Metabolic Circulation</div>
+      <div class="tc-text">Soil metabolically circulates through urban systems. Road incision and excavation displace soil strata, redirect subsurface water flows, and set in motion a supply of surplus soil.</div>
+    </div>
+    <div class="theory-cell">
+      <div class="tc-name">Puig de la Bellacasa</div>
+      <div class="tc-year">(2014)</div>
+      <div class="tc-concept">Living Infrastructure / Care</div>
+      <div class="tc-text">Soil is a living infrastructure requiring care — its health and vitality depend on sustained relational and political attention beyond instrumental use.</div>
+    </div>
+  </div>
 </section>
 
-<section class="s" id="frame">
+<!-- METHODOLOGY -->
+<section class="s" id="methodology">
   <div class="s-header">
     <span class="s-num">04</span>
-    <h2 class="s-title">The Frame</h2>
-    <span class="s-label">Conceptual Structure</span>
+    <h2 class="s-title">Methodology</h2>
+    <span class="s-label">Multi-scalar &amp; Interpretive Approach</span>
   </div>
-  <div class="frame-3col">
-    <div class="frame-col">
-      <div class="frame-col-num">Frame — I</div>
-      <h3>Soil Movement</h3>
-      <p>The physical displacement of earth — excavated, transported, deposited — as the primary driver of landscape change. Infrastructure as terrain-maker: alluvial, fill, imported, and excavated soils mapped across the 6002. Cadde section.</p>
-      <div class="flow"><div class="flow-node"><span class="fn">Excavated</span><span class="fa">→</span><span class="fn">Transported</span><span class="fa">→</span><span class="fn">Deposited</span></div></div>
+  <div class="accordion">
+    <div class="acc-item open">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        <div class="acc-trig-left"><span class="acc-trig-num">04 — A</span><span class="acc-trig-title">Spatial Mapping &amp; Soil Tracing</span></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="acc-trig-label">Material Movement</span><span class="acc-arrow">+</span></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-grid-2">
+          <div class="acc-col">
+            <p>At the core of the study is the <strong>tracing of soil movement</strong> generated through large-scale excavation at Bilkent City Hospital. Spatial mapping techniques and site analysis identify the points of extraction, transportation, and deposition of soil volumes across the territory.</p>
+            <p>Temporal analysis, supported by satellite imagery and planning documents, is used to understand how these movements unfold over time and how they correlate with changes in land use and ecological conditions.</p>
+          </div>
+          <div class="acc-col">
+            <p>The methodology combines <strong>spatial mapping, field observation, territorial relationality, experimental orthographic projections</strong>, and critical material interpretation through plant species analysis.</p>
+            <p>Rather than establishing linear causality between soil movement and ecological change, the study employs an <strong>interpretive and relational approach</strong> that foregrounds connections between excavation, hydrological systems, and emergent vegetation.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="frame-col">
-      <div class="frame-col-num">Frame — II</div>
-      <h3>Soil Metabolism</h3>
-      <p>Biological and chemical processes within soil layers — microbial activity, nutrient cycling, clay mineral swelling, water retention — understood as metabolic functions of a living system continuously responding to disturbance.</p>
-      <div class="flow"><div class="flow-node"><span class="fn">Clay Minerals</span><span class="fa">↔</span><span class="fn">Microbes</span><span class="fa">↔</span><span class="fn">Water</span></div></div>
+    <div class="acc-item">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        <div class="acc-trig-left"><span class="acc-trig-num">04 — B</span><span class="acc-trig-title">Field Observation</span></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="acc-trig-label">Situated Understanding</span><span class="acc-arrow">+</span></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-grid-2">
+          <div class="acc-col">
+            <p>Field observations at Beytepe Pond provide a <strong>situated understanding</strong> of soil displacement processes. Particular attention is given to soil composition, surface conditions, moisture patterns, and the emergence of vegetation in areas where such ecologies would not typically occur.</p>
+            <p>These observations are not treated as isolated data points, but as <strong>indicators of broader material and ecological transformations</strong> — each plant species a trace of the soil's origin, composition, and metabolic state.</p>
+          </div>
+          <div class="acc-col">
+            <p>The Botanical Park's unfinished entry and the Arboretum are targeted as the <strong>tertiary observation zone</strong>. Uncompleted construction and vegetation processes have resulted in a condition of wilderness remaining at the center of a designed area.</p>
+            <p>This condition reflects the <strong>ever-changing status of existing ecological particles</strong> and the bare threshold between refurbishment and abandonment — a site where design intention and metabolic process are in negotiation.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="frame-col">
-      <div class="frame-col-num">Frame — III</div>
-      <h3>Habitat</h3>
-      <p>Species colonisation as indicator of soil health and metabolic capacity. The presence of clay-tolerant species — reeds, dead-nettle, daisy — marks zones of ecological recovery within the transformed corridor.</p>
-      <div class="flow"><div class="flow-node"><span class="fn">Species</span><span class="fa">→</span><span class="fn">Soil Signal</span><span class="fa">→</span><span class="fn">Design</span></div></div>
+    <div class="acc-item">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        <div class="acc-trig-left"><span class="acc-trig-num">04 — C</span><span class="acc-trig-title">Material Reading &amp; Archival Research</span></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="acc-trig-label">Soil as Stratified Entity</span><span class="acc-arrow">+</span></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-grid-2">
+          <div class="acc-col">
+            <p>The methodology incorporates a <strong>material reading of soil as a stratified and relational entity</strong>. By examining the physical characteristics and concealed water features within the ground, the study interprets soil as both a carrier of past conditions and a medium through which new ecological assemblages emerge.</p>
+          </div>
+          <div class="acc-col">
+            <p>Complemented by critical reading of <strong>planning documents, archival research, aerial photographs</strong>, and site visits — revealing how soil is differently framed across institutional, ecological, and everyday discourses. Soil is understood not only as material, but as <strong>archive</strong>: retaining, transporting, and rearticulating ecological traces across urban space.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SPECIES -->
 <section class="s" id="species">
   <div class="s-header">
     <span class="s-num">05</span>
     <h2 class="s-title">Species &amp; Clayey Soil</h2>
-    <span class="s-label">Species Inventory / Indicators of Clay Soil Metabolism</span>
+    <span class="s-label">Indicators of Clay Soil Metabolism · Beytepe–Bilkent Research Zone, 2024–2025</span>
   </div>
-  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.85;margin-bottom:40px;font-weight:300;">Each species acts as a living indicator of soil conditions. The inventory below — drawn from field surveys at Beytepe Pond, 6002. Cadde, and Botanic Garden reference sites — correlates five key species with soil metabolism and design potential.</p>
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.85;margin-bottom:40px;font-weight:300;">Each species registers a surface trace of subterranean water and clay — soil as a living system readable through its flora and fauna. Each organism marks a node in the continuous metabolic exchange between clay minerals, water, organic matter, and living organisms.</p>
+
+  <!-- Image 1: Species inventory chart -->
+  <div class="zoom-hint">Click image to zoom</div>
+  <div class="zoom-wrap" id="z-species" onclick="toggleZoom('z-species',event)" style="margin-bottom:8px;">
+    <img id="img-species" alt="Species Inventory / Indicators of Clay Soil Metabolism" style="width:100%;display:block;"/>
+  </div>
+  <p class="img-caption">Species Inventory / Indicators of Clay Soil Metabolism</p>
+
   <table class="sp-table">
     <thead>
-      <tr>
-        <th>Species</th>
-        <th>Soil Relation</th>
-        <th>Condition / Presence</th>
-        <th>Design Potential</th>
-      </tr>
+      <tr><th>Species</th><th>Soil Relation</th><th>Habitat Layer</th><th>Observation Site</th></tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="sp-name">Phragmites australis</span>Common Reed</td>
-        <td>Thrives in waterlogged, clay-heavy soils. Filters and stabilises disturbed ground. Promotes organic matter accumulation along the Beytepe shoreline.</td>
-        <td>Stable — colonises ponds and drainage channels; present at Beytepe Pond edge and 6002. Cadde roadside</td>
-        <td>Anchor planting for water-soil transition zones; ecological indicator of subsurface moisture</td>
+        <td><span class="sp-name">Phragmites australis</span><span class="sp-common">Common Reed</span></td>
+        <td>Waterlogged clayey ground. Rhizomes bind the clay matrix, building organic matter in situ. Renders invisible groundwater movement at the surface.</td>
+        <td>Water surface / subsurface — renders invisible groundwater movement at the surface.</td>
+        <td>Roadside, 6002. Ave. · Beytepe Pond edge</td>
       </tr>
       <tr>
-        <td><span class="sp-name">Lamium purpureum</span>Dead-nettle / Purple Archangel</td>
-        <td>Indicates moderately disturbed clay soils rich in nitrogen. Presence marks areas of recent soil movement and early successional recovery.</td>
-        <td>Widespread along road margins and disturbed fill zones</td>
-        <td>Indicator of soil recovery phase I — nitrogen enrichment from organic matter breakdown</td>
+        <td><span class="sp-name">Lamium purpureum</span><span class="sp-common">Purple Deadnettle</span></td>
+        <td>Moist, base-rich clay soils. Pioneer coloniser of disturbed and excavated ground surfaces.</td>
+        <td>Surface / herbaceous layer — urban voids, road margins, post-construction bare ground.</td>
+        <td>İncesudere stream corridor · urban clay patches · Bilkent</td>
       </tr>
       <tr>
-        <td><span class="sp-name">Bellis sp.</span>Daisy</td>
-        <td>High moisture tolerance; adapted to compacted clay. Signals early successional stages immediately post-disturbance.</td>
-        <td>Present in fill soil zones where surface compaction prevents deeper root penetration</td>
-        <td>Pioneer species in restoration sequences — low maintenance ground cover in clay zones</td>
+        <td><span class="sp-name">Helix sp.</span><span class="sp-common">Land Snail</span></td>
+        <td>High moisture, calcium-rich clay. Shell construction draws calcium from clay minerals — active participant in calcium cycling.</td>
+        <td>Surface fauna / lithic layer — clay-organic matter interface; moist microhabitats in soil aggregate structures.</td>
+        <td>Beytepe Pond margins · wet clay surface zones</td>
       </tr>
       <tr>
-        <td><span class="sp-name">Fallopia / Bilderdykia sp.</span>Black Bindweed</td>
-        <td>Opportunistic coloniser of bare disturbed soils. Covers exposed fill and excavated ground rapidly; tolerant of disturbed clay strata.</td>
-        <td>Locally present near active construction margins — monitor for spread</td>
-        <td>Erosion control in short term; manage to prevent shading of pioneer species</td>
+        <td><span class="sp-name">Polliniferous tree sp. <em>(to be identified)</em></span><span class="sp-common">+ Apis mellifera (Honeybee)</span></td>
+        <td>Deep taproot into clay sub-layer. High water-storage capacity signals persistent clay moisture. Tree-pollinator network links soil substrate to airborne ecological circulation.</td>
+        <td>Canopy / aerial layer — tree-pollinator network links soil substrate to airborne ecological circulation.</td>
+        <td>Beytepe Pond vicinity · Botanic Garden edge</td>
       </tr>
       <tr>
-        <td><span class="sp-name">Beytepe Botanic Garden spp.</span>Cultivated Reference</td>
-        <td>Adjacent semi-managed landscape provides a reference baseline for potential ecological trajectories in the absence of construction disturbance.</td>
-        <td>Reference site — managed conditions, high species diversity</td>
-        <td>Long-term habitat design target; species palette for native planting strategies</td>
+        <td><span class="sp-name">Beytepe Botanic Garden</span><span class="sp-common">Curated Clay-Soil Plant Collection</span></td>
+        <td>Human-assembled, yet the species present confirm clay-soil affinity. Reference for in-situ wild flora. Curated habitat — ex-situ reference for the spontaneous vegetation of the Beytepe basin.</td>
+        <td>Curated habitat — ex-situ reference for the spontaneous vegetation of the Beytepe basin.</td>
+        <td>Adjacent to Beytepe Pond · Beytepe Campus</td>
       </tr>
     </tbody>
   </table>
-  <div style="margin-top:16px;border-top:1px solid var(--rule);padding-top:48px;">
-    <div style="font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:24px;">Habitat Strata / Soil as a Living System</div>
-    <div class="layers-wrap" id="layerWrap">
-      <button class="layer-btn active" onclick="setL(0)"><div class="ln">Aerial / Canopy Layer</div><div class="ld">Above ground</div></button>
-      <button class="layer-btn" onclick="setL(1)"><div class="ln">Surface Vegetation Layer</div><div class="ld">0 – 50 cm</div></button>
-      <button class="layer-btn" onclick="setL(2)"><div class="ln">Root / Microbial Layer</div><div class="ld">50 cm – 1.5 m</div></button>
-      <button class="layer-btn" onclick="setL(3)"><div class="ln">Clayey Soil / Aquifer Layer</div><div class="ld">1.5 m – 3 m</div></button>
-      <button class="layer-btn" onclick="setL(4)"><div class="ln">Bedrock / Basalt</div><div class="ld">Below 3 m</div></button>
+
+  <!-- Habitat layers with Image 3 -->
+  <div style="margin-top:64px;border-top:1px solid var(--rule);padding-top:48px;">
+    <div style="font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Habitat Strata / Soil as a Living System</div>
+    <p style="font-size:11px;color:var(--muted);line-height:1.7;max-width:700px;margin-bottom:24px;font-weight:300;">Each stratum is a habitat. Soil is not merely ground — it is the layered record of flows, species, and time. After Harris (2025): soil understood as a process rather than as an object.</p>
+
+    <div class="zoom-hint">Click image to zoom</div>
+    <div class="zoom-wrap" id="z-habitat" onclick="toggleZoom('z-habitat',event)" style="margin-bottom:8px;">
+      <img id="img-habitat" alt="Habitat Strata / Soil as a Living System" style="width:100%;display:block;"/>
+    </div>
+    <p class="img-caption" style="margin-bottom:32px;">Habitat Strata / Soil as a Living System · Following Harris (2025)</p>
+
+    <div class="layers-wrap">
+      <div class="layers-top">
+        <button class="layer-btn active" onclick="setL(0)"><div class="ln">Aerial / Fauna</div><div class="ld">01 — Above ground</div></button>
+        <button class="layer-btn" onclick="setL(1)"><div class="ln">Surface Vegetation</div><div class="ld">02 — Phragmites · Lamium</div></button>
+        <button class="layer-btn" onclick="setL(2)"><div class="ln">Root / Microbial</div><div class="ld">03 — Capillary · microbial</div></button>
+        <button class="layer-btn" onclick="setL(3)"><div class="ln">Clayey / Aquifer</div><div class="ld">04 — Ankara clays</div></button>
+        <button class="layer-btn" onclick="setL(4)"><div class="ln">Bedrock / Basalt</div><div class="ld">05 — Impermeable base</div></button>
+      </div>
       <div class="layer-detail" id="layerDetail">
-        <h4>Aerial / Canopy Layer</h4>
-        <p>The aerial layer comprises the above-ground biomass — primarily reed stands along water channels and shrub canopy at habitat margins. This layer moderates microclimate, captures airborne particles, and provides nesting structures for fauna. On disturbed sites, its absence marks zones of maximum ecological stress.</p>
+        <h4>01 — Aerial / Fauna Layer</h4>
+        <p>Birds, insects, wind. Pollination and lateral seed dispersal. The aerial extension of soil surface activity — soil as process extends above ground through its biotic agents.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TIMELAPSE -->
 <section class="s" id="timelapse">
   <div class="s-header">
     <span class="s-num">06</span>
     <h2 class="s-title">Timelapse</h2>
-    <span class="s-label">Transformation 2004 — 2025</span>
+    <span class="s-label">Aerial Documentation 2004 — 2025</span>
   </div>
-  <p class="tl-intro-text">Twenty-one years of satellite imagery — from pre-development greenfield (2004) to the layered infrastructure landscape of today (2025). Three scales of reading: every five years for the long arc; monthly from 2014–2015 and 2017–2019 for the construction period; and four key comparison frames across the site.</p>
+  <p style="font-size:12px;color:var(--muted);max-width:640px;line-height:1.85;margin-bottom:56px;font-weight:300;">Satellite imagery from 2004 to 2025 documents the excavation, transport, and ecological aftermath of large-scale soil displacement in Bilkent. Three phases articulate the transformation from pre-excavation steppe condition to construction intensity to emergent ecological recovery. Following Harris (2025): soil retains traces of its history — seeds, chemicals, disturbance marks — that resurface, altered, in new configurations.</p>
   <div class="phases">
     <div class="phase">
-      <div class="phase-tag">Phase I</div>
-      <div class="phase-years">2004–10</div>
-      <div class="phase-title">Ground Zero</div>
-      <p>Predominantly agricultural and semi-natural landscape. Early traces of road alignment visible. Alluvial and native soil systems largely intact. Beytepe Pond shoreline colonised by reed stands.</p>
-      <div class="phase-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="phase-tag">Phase I · ~1940 — 2012</div>
+      <div class="phase-years">Steppe</div>
+      <div class="phase-title">Steppe / Stream Corridor</div>
+      <p>The Bilkent area exhibits steppe characteristics. Beytepe Pond is constructed artificially (~1980s). Ecological conditions remain consistent with the regional steppe climate — no anomalous wetland formation yet observable.</p>
+      <div class="phase-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     </div>
     <div class="phase">
-      <div class="phase-tag">Phase II</div>
-      <div class="phase-years">2012–19</div>
-      <div class="phase-title">Development of the Road</div>
-      <p>Intensive construction period. Monthly imagery from 2017–2019 shows the simultaneous development of road infrastructure and the movement of the surrounding environment. Imported fill soils introduced.</p>
-      <div class="phase-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="phase-tag">Phase II · ~2000 — 2019</div>
+      <div class="phase-years">Excavation</div>
+      <div class="phase-title">Hospital / Road Construction · Excavated Fill Deposited</div>
+      <p>Large-scale excavation for Bilkent City Hospital. Significant soil volumes extracted, transported, and deposited. Monthly imagery reveals the pace of material redistribution and its hydrological consequences across the territory.</p>
+      <div class="phase-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div>
     </div>
     <div class="phase">
-      <div class="phase-tag">Phase III</div>
-      <div class="phase-years">2020–25</div>
-      <div class="phase-title">Aftermath</div>
-      <p>Post-construction ecological succession. Disturbed soils begin to be colonised. Drainage and water-soil dynamics reorganise around new topography. Species return to margins of the corridor.</p>
-      <div class="phase-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div>
+      <div class="phase-tag">Phase III · 2020 — 2025</div>
+      <div class="phase-years">Afterlife</div>
+      <div class="phase-title">Reeds · Deadnettle · Snails — Soil Speaks</div>
+      <p>Emergent wetland vegetation in the expected steppe context. <em>Phragmites australis</em>, <em>Lamium purpureum</em>, and <em>Helix sp.</em> at Beytepe Pond. The soil's metabolic and biological properties, displaced from their origin, become activated — soil speaks.</p>
+      <div class="phase-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div>
     </div>
   </div>
 </section>
 
+<!-- CONCEPTUAL FRAMEWORK -->
 <section class="s" id="output">
   <div class="s-header">
     <span class="s-num">07</span>
-    <h2 class="s-title">The Output</h2>
-    <span class="s-label">Conceptual Framework</span>
+    <h2 class="s-title">Conceptual Framework</h2>
+    <span class="s-label">Soil as Process — Displaced Volume</span>
   </div>
-  <div class="out-grid">
-    <div class="out-cell"><div class="out-num">01</div><h3>Soil Movement</h3><p>Mapping the physical displacement of earth — alluvial, fill, imported, excavated — as the primary design medium. Infrastructure as terrain-maker: every cut and fill leaves a metabolic trace in the landscape.</p></div>
-    <div class="out-cell"><div class="out-num">02</div><h3>Soil Metabolism</h3><p>Designing with biological and chemical processes: microbial cycles, clay mineral activity, capillary water dynamics. Soil as living infrastructure — responsive, layered, and continuous.</p></div>
-    <div class="out-cell"><div class="out-num">03</div><h3>Habitat</h3><p>Species-led design strategies — using indicator plants to identify zones of ecological potential and structure a phased recovery landscape along the 6002. Cadde corridor and Beytepe Pond margins.</p></div>
+  <p style="font-size:11px;color:var(--muted);max-width:700px;line-height:1.85;margin-bottom:56px;font-weight:300;">Soil is best understood as a process rather than as an object (Meulemans, 2020). Its status as inert or lively shifts across strata and over time — neither purely substrate nor purely ecological agent. Habitat reproduces soil — the cycle of socioecological metabolism continues.</p>
+  <div class="cf-wrap">
+    <div class="cf-cell">
+      <div class="cf-num">01</div>
+      <h3>Soil Movement</h3>
+      <p>Road incision and building excavation displace soil strata, redirect subsurface water flows, and set in motion a supply of surplus soil (Harris, 2025). The physical displacement of earth from the Bilkent City Hospital excavation zone transfers embedded biological, chemical, and hydrological properties — initiating processes that cannot be fully anticipated or controlled.</p>
+    </div>
+    <div class="cf-cell">
+      <div class="cf-num">02</div>
+      <h3>Soil Metabolism</h3>
+      <p>Clay–water–organic matter cycle. Microbial activity, calcium and carbon flows. Soil alternates between lively and inert in response to disturbance and capital demand (Harris, 2025). The biological and chemical processes within displaced soil layers persist through displacement — the soil metabolizes in its new location, producing new assemblages between ground, water, and vegetation.</p>
+    </div>
+    <div class="cf-cell">
+      <div class="cf-num">03</div>
+      <h3>Habitat</h3>
+      <p>All strata form a single interconnected living system. Fusing abiotic and biotic elements in ways that cannot be reduced to their component parts (Harris, 2025). The emergent ecologies at Beytepe Pond, the Arboretum, and the Botanical Park are ecological afterlives: <em>Phragmites australis</em> and <em>Lamium purpureum</em> are not opportunists — they are reading the soil's memory.</p>
+    </div>
   </div>
-  <div class="concept-box">
-    <div class="concept-box-text">
-      <h3>Soil as Process — Design as Response</h3>
-      <p>The project proposes reading the site not as a problem to be solved but as a metabolic process to be understood and extended. Soil is the archive of past disturbance and the medium of future habitat. Design operates at the intersection of infrastructure, ecology, and time — working with what the land already knows how to do.</p>
-    </div>
-    <div class="concept-diagram">
-      <div class="cd-row">
-        <div class="cd-cell"><div class="ct">Soil Movement</div><div class="cv">Excavation, transport, deposition — displacement as design medium</div></div>
-        <div class="cd-cell"><div class="ct">↓</div></div>
-      </div>
-      <div class="cd-row">
-        <div class="cd-cell"><div class="ct">Soil Metabolism</div><div class="cv">Microbial cycles, clay activity, water retention — biology as infrastructure</div></div>
-        <div class="cd-cell"><div class="ct">↓</div></div>
-      </div>
-      <div class="cd-row">
-        <div class="cd-cell"><div class="ct">Habitat</div><div class="cv">Living systems, species indicators, long-term landscape recovery</div></div>
-        <div class="cd-cell"><div class="ct">↑</div></div>
-      </div>
-    </div>
+  <div style="background:var(--ink);padding:48px;margin-top:1px;">
+    <div style="font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:#8a8478;margin-bottom:20px;">Central Proposition</div>
+    <p style="color:var(--cream);font-size:16px;font-weight:300;font-style:italic;line-height:1.7;max-width:800px;">Soil is not a passive substrate to be stabilized — it is an <strong style="font-style:normal;color:#fff;">active agent</strong> whose circulation reshapes urban ecologies, produces new forms of habitability, and simultaneously carries and <strong style="font-style:normal;color:#fff;">reactivates traces of past environments</strong>.</p>
+    <p style="margin-top:24px;font-size:10px;color:#5a5448;line-height:1.8;font-weight:300;">References: Harris, L. (2025). Soils in motion: the metabolism of New York City's urban grounds. Landscape Research, 50(8), 1287–1302. · Barrera-Bassols, N. &amp; Zinck, A. (2003). 'Land moves and behaves'. Geografiska Annaler, 85(3–4). · Meulemans, G. (2020). Urban pedogeneses. Environmental Humanities, 12(1). · Puig de la Bellacasa, M. (2014). Matters of care in technoscience. Social Studies of Science.</p>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
-      <div class="ft-title">Reflections on<br>Landscape</div>
-      <div class="ft-sub" style="margin-top:12px;">ARCH728 — Graduate Studio</div>
+      <div class="ft-title">Displaced<br>Volume</div>
+      <div class="ft-sub" style="margin-top:10px;">Soil Mobility and the Ecological Afterlives</div>
+      <p style="font-size:11px;color:#8a8478;margin-top:10px;font-weight:300;line-height:1.7;">ARCH728 — Reflections on Landscape<br>Bilkent — Beytepe — Ankara</p>
     </div>
     <div class="fc">
       <h4>Sections</h4>
       <a href="#drawing">Section Drawing</a>
-      <a href="#inventory">The Inventory</a>
-      <a href="#question">The Question</a>
-      <a href="#site">The Site</a>
-      <a href="#frame">The Frame</a>
+      <a href="#proposal">Displaced Volume</a>
+      <a href="#sites">Observation Sites</a>
+      <a href="#theory">Theoretical Frame</a>
+      <a href="#methodology">Methodology</a>
       <a href="#species">Species &amp; Soil</a>
       <a href="#timelapse">Timelapse</a>
-      <a href="#output">The Output</a>
+      <a href="#output">Conceptual Framework</a>
     </div>
     <div class="fc">
-      <h4>Context</h4>
-      <p>Site: 6002. Cadde, Ankara</p>
-      <p>Section: Beytepe Pond — Bilkent</p>
-      <p>Elevation: 854 m — 891 m</p>
-      <p>Period: 2004 – 2025</p>
-      <p>Course: ARCH728</p>
+      <h4>Key Concepts</h4>
+      <p>Displaced Volume</p>
+      <p>Soil Mobility</p>
+      <p>Ecological Afterlives</p>
+      <p>Soil as Archive</p>
+      <p>Metabolic Circulation</p>
+      <p>Living Infrastructure</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>ARCH728 — Reflections on Landscape / Soil as a Living System</span>
-    <span>6002. Cadde — Beytepe — Bilkent — Ankara</span>
+    <span>ARCH728 — Reflections on Landscape</span>
+    <span>Displaced Volume: Soil Mobility and the Ecological Afterlives</span>
   </div>
 </footer>
 
 <script>
+// ── ZOOM ──
+function toggleZoom(id, e){
+  const w=document.getElementById(id);
+  if(!w.classList.contains('zoomed')){
+    w.classList.add('zoomed');
+    const img=w.querySelector('img');
+    if(img){
+      const r=w.getBoundingClientRect();
+      const ox=((e.clientX-r.left)/r.width)*100;
+      const oy=((e.clientY-r.top)/r.height)*100;
+      img.style.transformOrigin=ox+'% '+oy+'%';
+    }
+  } else {
+    w.classList.remove('zoomed');
+    const img=w.querySelector('img');
+    if(img) img.style.transformOrigin='center center';
+  }
+}
+
+// ── ACCORDION ──
+function toggleAcc(btn){
+  const item=btn.closest('.acc-item');
+  const isOpen=item.classList.contains('open');
+  btn.closest('.accordion').querySelectorAll('.acc-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ── SITES ──
+const siteData=[
+  {t:"Phase I — Beytepe Pond",p:"The Beytepe Pond and the unfinished parts of the Botanical Park are approached as a <strong>critical site where displaced soil dynamics become materially observable</strong>. In an area expected to exhibit steppe characteristics, the emergence of wetland vegetation — reeds (<em>Phragmites australis</em>), purple deadnettle (<em>Lamium purpureum</em>), and land snail (<em>Helix sp.</em>) — around the pond and within excavation-related grounds suggests that <strong>transported soils carry latent ecological potentials that become activated under new environmental conditions</strong>. Field observations focus on soil composition, surface conditions, moisture patterns, and the emergence of vegetation in areas where such ecologies would not typically occur."},
+  {t:"Phase II — Bilkent City Hospital &amp; Arboretum",p:"The Bilkent City Hospital construction site is the <strong>origin point of large-scale soil excavation</strong> — where significant volumes of clay-rich earth were extracted, transported, and redistributed across the Bilkent territory. The Arboretum adjacent to the hospital site provides a partially managed ecological reference: a designed landscape now co-inhabited by spontaneous species, offering a reading of what happens when ecological and design intentions diverge. This site is examined through <strong>spatial mapping, planning documents, satellite imagery</strong>, and the orthographic projection of soil movement volumes."},
+  {t:"Phase III — Botanical Park — Unfinished Entry",p:"The Botanical Park's unfinished entry building and half-completed construction are approached as a <strong>site of designed wilderness</strong>: an uncompleted architectural and landscape process that has produced a condition of ecological autonomy within a designed area. The co-presence of managed and spontaneous ecologies, of construction residue and plant colonisation, embodies the central tension of the research — <strong>the negotiation between design intention and metabolic process</strong>. This site reflects on the ever-changing status of existing ecological particles and the bare threshold of refurbishment."}
+];
+function setSite(i){
+  document.querySelectorAll('.site-card').forEach((c,j)=>c.classList.toggle('active',j===i));
+  const d=document.getElementById('siteDetail');
+  d.querySelector('h4').textContent=siteData[i].t.replace(/<[^>]+>/g,'');
+  d.querySelector('p').innerHTML=siteData[i].p;
+}
+
+// ── LAYERS ──
 const layerData=[
-  {t:"Aerial / Canopy Layer",p:"The aerial layer comprises the above-ground biomass — primarily reed stands along water channels and shrub canopy at habitat margins. This layer moderates microclimate, captures airborne particles, and provides nesting structures for fauna. On disturbed sites, its absence marks zones of maximum ecological stress."},
-  {t:"Surface Vegetation Layer",p:"The surface vegetation layer (0–50 cm) hosts pioneer and ruderal species — the first colonisers of disturbed ground. On this site, Lamium purpureum and Bellis sp. occupy this layer, stabilising exposed soils and initiating organic matter accumulation essential for long-term soil health."},
-  {t:"Root / Microbial Layer",p:"The root and microbial zone (50 cm–1.5 m) is where the most intense soil metabolism occurs. Root exudates feed microbial communities; mycorrhizal networks exchange nutrients; clay particles bind water and minerals. This layer is the engine of soil health — and the most vulnerable to compaction from construction activity."},
-  {t:"Clayey Soil / Aquifer Layer",p:"The deep clay layer (1.5–3 m) acts simultaneously as a water aquifer and a chemical reservoir. Clay minerals — primarily smectite in Ankara's geology — swell and shrink with moisture cycles, creating the characteristic cracked surfaces visible across the site. This layer governs long-term drainage and water table dynamics."},
-  {t:"Bedrock / Basalt",p:"The basalt bedrock beneath the site represents geological time — the fixed substrate that shapes topography, drainage basin, and the ultimate fate of water moving through the system. In design terms, it is the datum against which all surface conditions are understood as temporary and transformable."}
+  {t:"01 — Aerial / Fauna Layer",p:"Birds, insects, wind. Pollination and lateral seed dispersal. The aerial extension of soil surface activity — soil as process extends above ground through its biotic agents. Apis mellifera and polliniferous tree sp. at Beytepe Pond vicinity link the soil substrate to airborne ecological circulation."},
+  {t:"02 — Surface Vegetation Layer",p:"Phragmites rhizomes bind the clay matrix, accumulating organic matter in situ. Lamium colonises disturbed ground as pioneer — each plant renders the soil's moisture and chemistry legible at the surface (Harris, 2025). Their presence does not indicate naturalisation to the steppe; it signals the metabolic persistence of transported soil properties."},
+  {t:"03 — Root / Microbial Layer",p:"Clay particle–organic matter–water triangle. Zone of peak microbial activity and soil aggregate formation. Snails transfer calcium from clay minerals upward — active participants in nutrient cycling, not passive inhabitants. This layer is the engine of the ecological afterlife — the most direct evidence of soil as archive."},
+  {t:"04 — Clayey Soil / Aquifer Layer",p:"Ankara clays — primarily smectite — water transport, excavation pressure. Subsurface water flows laterally, following the slope gradient. Excavation pressure displaces this flow upward. The reed stands at roadsides are surface evidence of this diffusion — soil moves and behaves (Barrera-Bassols & Zinck, 2003)."},
+  {t:"05 — Bedrock / Basalt",p:"Impermeable base layer. Traps water within the clay matrix above, determining the habitat system's hydrology. The primary geological determinant of the site's lively potential. Against this fixed geological datum, the mobility of everything above becomes legible — soils move, ecologies travel, the distinction between natural and artificial dissolves."}
 ];
 function setL(i){
   document.querySelectorAll('.layer-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
@@ -626,13 +685,97 @@ function setL(i){
   d.querySelector('h4').textContent=layerData[i].t;
   d.querySelector('p').textContent=layerData[i].p;
 }
-const secs=document.querySelectorAll('section.s[id]');
-const links=document.querySelectorAll('.nav-links a');
+
+// ── SCROLL SPY ──
+const allSecs=document.querySelectorAll('section.s[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{
   let cur='';
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id||'';});
-  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  allSecs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
 });
+
+// ── LOAD REAL IMAGES via canvas from uploaded blobs ──
+// Map of element id → uploaded File object (populated below)
+const IMG_MAP = {
+  'img-species': 'species',
+  'img-section': 'section',
+  'img-habitat': 'habitat',
+  'img-steppe':  'steppe',
+  'img-streams': 'streams'
+};
+
+// Read images from window.ARCH_IMAGES if injected by parent
+function loadImages(imgs){
+  Object.entries(IMG_MAP).forEach(([elId, key])=>{
+    if(imgs[key]){
+      const el=document.getElementById(elId);
+      if(el) el.src=imgs[key];
+    }
+  });
+}
+
+// Accept images posted from outside
+window.addEventListener('message',(e)=>{
+  if(e.data && e.data.type==='ARCH_IMAGES') loadImages(e.data.images);
+});
+
+// ── INLINE IMAGES (injected at build time) ──
+(function(){
+  const imgs = window.__ARCH_IMGS__ || {};
+
+  // Image 1 → species
+  // Image 2 → section  
+  // Image 3 → habitat
+  // Image 4 → steppe
+  // Image 5 → streams
+
+  // We use a FileReader approach: images are stored as data-src on the img tags
+  // and loaded once the DOM is ready. Since we can't embed multi-MB base64 here,
+  // we use Object URLs created from Blob data passed via the conversation.
+
+  // Inject uploaded images using window.fs.readFile
+  async function injectImages(){
+    const files = [
+      { id:'img-species', name:'image1_species.png'  },
+      { id:'img-section', name:'image2_section.png'  },
+      { id:'img-habitat', name:'image3_habitat.png'  },
+      { id:'img-steppe',  name:'image4_steppe.jpg'   },
+      { id:'img-streams', name:'image5_streams.png'  },
+    ];
+    for(const f of files){
+      try{
+        const data = await window.fs.readFile(f.name);
+        const blob = new Blob([data]);
+        const url  = URL.createObjectURL(blob);
+        const el   = document.getElementById(f.id);
+        if(el) el.src = url;
+      } catch(e){
+        const el = document.getElementById(f.id);
+        if(el){ el.style.background='#ede9e0'; el.style.minHeight='200px'; }
+      }
+    }
+  }
+
+  // Image 1 — Species Inventory (Imgur)
+  (function(){
+    const el = document.getElementById('img-species');
+    // Try direct imgur image URL formats
+    const candidates = [
+      'https://drive.google.com/uc?export=view&id=1ouccAOWqTTHU-t4se_JEFT7fplESvpIl',
+      'https://lh3.googleusercontent.com/d/1ouccAOWqTTHU-t4se_JEFT7fplESvpIl',
+    ];
+    let i = 0;
+    function tryNext(){
+      if(i >= candidates.length) return;
+      el.onerror = tryNext;
+      el.src = candidates[i++];
+    }
+    tryNext();
+  })();
+
+  injectImages();
+})();
 </script>
 </body>
 </html>
