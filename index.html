@@ -757,24 +757,25 @@ window.addEventListener('message',(e)=>{
     }
   }
 
-  // Image 1 — Species Inventory (Imgur)
-  (function(){
-    const el = document.getElementById('img-species');
-    // Try direct imgur image URL formats
-    const candidates = [
-      'https://drive.google.com/uc?export=view&id=1ouccAOWqTTHU-t4se_JEFT7fplESvpIl',
-      'https://lh3.googleusercontent.com/d/1ouccAOWqTTHU-t4se_JEFT7fplESvpIl',
+  // Load all images via window.fs.readFile
+  (async()=>{
+    const map = [
+      { id:'img-species', file:'Screenshot 2026-05-05 at 00.23.58.png', type:'image/png' },
+      { id:'img-section', file:'Screenshot 2026-05-05 at 00.24.13.png', type:'image/png' },
+      { id:'img-habitat', file:null, type:'image/png' },
+      { id:'img-steppe',  file:null, type:'image/jpeg' },
+      { id:'img-streams', file:null, type:'image/png' },
     ];
-    let i = 0;
-    function tryNext(){
-      if(i >= candidates.length) return;
-      el.onerror = tryNext;
-      el.src = candidates[i++];
+    for(const m of map){
+      if(!m.file) continue;
+      try{
+        const data = await window.fs.readFile(m.file);
+        const b64  = btoa(String.fromCharCode(...new Uint8Array(data)));
+        const el   = document.getElementById(m.id);
+        if(el) el.src = `data:${m.type};base64,${b64}`;
+      } catch(e){ console.warn('Could not load', m.file, e); }
     }
-    tryNext();
   })();
-
-  injectImages();
 })();
 </script>
 </body>
